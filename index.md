@@ -32,3 +32,7 @@ If you have feedback, feature requests, or questions, reach out anytime at ecoso
   <img src="screenshots/screen3.png" alt="Screen 3" width="24%" />
   <img src="screenshots/screen4.png" alt="Screen 4" width="24%" />
 </p>
+
+
+## Privacy Policy
+For our full privacy policy, please visit our [Privacy Policy page](/privacy).
