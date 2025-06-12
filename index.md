@@ -35,4 +35,4 @@ If you have feedback, feature requests, or questions, reach out anytime at ecoso
 
 
 ## Privacy Policy
-For our full privacy policy, please visit our [Privacy Policy page](/privacy).
+For our full privacy policy, please visit our [Privacy Policy page](./privacy).
