@@ -2,6 +2,9 @@
 
 Welcome to the EcoSort.Barcelona support page.
 
+📱 **Try our app now on the App Store**:  
+👉 [Download EcoSort.Barcelona](https://apps.apple.com/us/app/ecosort-barcelona/id6747254846)
+
 If you have any questions or issues with the app, please contact us via email:
 
 📧 [ecosort.barcelona@gmail.com](mailto:ecosort.barcelona@gmail.com)
@@ -11,8 +14,8 @@ If you have any questions or issues with the app, please contact us via email:
 ## How to use EcoSort
 
 1. Select language  
-2. Scan the packaging of your item.  
-3. Get clear sorting instructions and eco‑friendly tips.
+2. Scan the packaging of your item  
+3. Get clear sorting instructions and eco‑friendly tips
 
 EcoSort isn’t just another recycling app. We want to make it effortless for everyone to dispose of waste correctly—no more confusion about bins, colors, or local rules. With EcoSort, you’ll spend less time worrying about “where does this go?” and more time feeling good about helping the planet. But remember: you need to scan, choose, and act. We’ll provide the information and tools—you do the sorting.
 
@@ -33,6 +36,8 @@ If you have feedback, feature requests, or questions, reach out anytime at ecoso
   <img src="screenshots/screen4.png" alt="Screen 4" width="24%" />
 </p>
 
+---
 
 ## Privacy Policy
+
 For our full privacy policy, please visit our [Privacy Policy page](./privacy).
