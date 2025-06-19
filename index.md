@@ -17,13 +17,16 @@ If you have any questions or issues with the app, please contact us via email:
 2. Scan the packaging of your item  
 3. Get clear sorting instructions and eco‑friendly tips
 
-EcoSort isn’t just another recycling app. We want to make it effortless for everyone to dispose of waste correctly—no more confusion about bins, colors, or local rules. With EcoSort, you’ll spend less time worrying about “where does this go?” and more time feeling good about helping the planet. But remember: you need to scan, choose, and act. We’ll provide the information and tools—you do the sorting.
+EcoSort isn’t just another recycling app. We want to make it effortless for everyone to dispose of waste correctly—no more confusion about bins, colors, or local rules. With EcoSort, you’ll spend less time worrying about “where does this go?” and more time feeling good about helping the planet. We’ll provide the information and tools—you do the sorting.
 
 If you have feedback, feature requests, or questions, reach out anytime at ecosort.barcelona@gmail.com
 
 ---
 
 **DISCLAIMER:** EcoSort offers guidance based on publicly available recycling guidelines. Always double‑check local regulations, as rules can change. We do not provide legal or professional waste‑management advice—consider this a suggestion to help you get started.
+
+Right now, we operate only in Barcelona, following Spain’s national recycling guidelines.
+But very soon, we’ll expand across all of Spain, and later to other countries in Europe.
 
 ---
 
