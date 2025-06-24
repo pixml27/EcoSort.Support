@@ -7,7 +7,7 @@ Welcome to the EcoSort.Barcelona support page.
 
 If you have any questions or issues with the app, please contact us via email:
 
-📧 [ecosort.barcelona@gmail.com](mailto:akor@ecosort.app)
+📧 [akor@ecosort.app](mailto:akor@ecosort.app)
 
 ---
 
@@ -19,7 +19,7 @@ If you have any questions or issues with the app, please contact us via email:
 
 EcoSort isn’t just another recycling app. We want to make it effortless for everyone to dispose of waste correctly—no more confusion about bins, colors, or local rules. With EcoSort, you’ll spend less time worrying about “where does this go?” and more time feeling good about helping the planet. We’ll provide the information and tools—you do the sorting.
 
-If you have feedback, feature requests, or questions, reach out anytime at ecosort.barcelona@gmail.com
+If you have feedback, feature requests, or questions, reach out anytime at akor@ecosort.app
 
 ---
 
