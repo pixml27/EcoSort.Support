@@ -1,7 +1,7 @@
 # Privacy Policy for EcoSort.Barcelona
 
-* **Effective Date:** May 30, 2025
-* **Last Updated:** May 30, 2025
+* **Effective Date:** June 24, 2025
+* **Last Updated:** June 24, 2025
 
 ---
 
@@ -20,7 +20,7 @@ This Privacy Policy is available in multiple languages within the App.
 The data controller responsible for your personal data is:
 
 Arsenii Koriaigin
-ecosort.barcelona@gmail.com
+akor@ecosort.app
 Barcelona, Spain
 
 ### 3. What Information We Collect and Why
