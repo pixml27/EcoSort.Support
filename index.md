@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoSort.Barcelona App Support</title>
+    <title>EcoSort.app | AI-powered recycling assistant</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
 
     <div class="container">
         <header class="app-header">
-            <img src="screenshots/logo.png" alt="EcoSort Logo" class="logo">
+            <img src="logo.png" alt="EcoSort Logo" class="logo">
         </header>
 
         <main>
@@ -55,7 +55,7 @@
             <p><strong>DISCLAIMER:</strong> EcoSort offers guidance based on publicly available recycling guidelines. Always double‑check local regulations, as rules can change. We do not provide legal or professional waste‑management advice—consider this a suggestion to help you get started.</p>
             <p>Right now, we operate only in Barcelona, following Spain’s national recycling guidelines. But very soon, we’ll expand across all of Spain, and later to other countries in Europe.</p>
             <div class="contact-links">
-                <a href="./privacy">Privacy Policy</a>
+                <a href="privacy.html">Privacy Policy</a>
                 <span>|</span>
                 <a href="mailto:akor@ecosort.app">Contact us: akor@ecosort.app</a>
             </div>
