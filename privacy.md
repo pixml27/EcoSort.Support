@@ -1,5 +1,7 @@
 ---
 layout: default
+title: EcoSort.app
+description: AI-powered recycling assistant
 ---
 <body>
 
