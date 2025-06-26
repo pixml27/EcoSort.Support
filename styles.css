@@ -14,7 +14,6 @@ body {
   font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   margin: 0;
   padding: 0;
-  /* Глобальное выравнивание по центру убрано отсюда, чтобы не мешать текстовым страницам */
 }
 
 .container {
@@ -42,7 +41,7 @@ body {
 
 main {
   flex-grow: 1;
-  text-align: center; /* Выравнивание по центру для секций на главной */
+  text-align: center;
 }
 
 .main-title {
@@ -105,14 +104,15 @@ h2 {
 
 .screenshots-container {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Центрирует группу скриншотов */
   gap: 16px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Позволит перенос на мобильных устройствах */
 }
 
+/* ИЗМЕНЕНИЕ: Стили для скриншотов, чтобы они помещались в ряд */
 .screenshots-container img {
-  width: 23%;
-  min-width: 180px;
+  width: 22%; /* Уменьшаем ширину, чтобы точно хватило места для 4х с отступами */
+  flex-shrink: 0; /* Запрещаем сжиматься */
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -144,8 +144,7 @@ h2 {
 }
 
 
-/* --- НОВЫЕ СТИЛИ для страницы Политики Конфиденциальности --- */
-
+/* --- Стили для страницы Политики Конфиденциальности --- */
 .page-header {
   width: 100%;
   margin-bottom: 24px;
@@ -163,7 +162,7 @@ h2 {
 }
 
 .privacy-content {
-  text-align: left; /* Важно: для длинных текстов нужно выравнивание по левому краю */
+  text-align: left;
 }
 
 .privacy-content h1 {
@@ -192,7 +191,7 @@ h2 {
 
 .privacy-content ul {
   list-style-position: outside;
-  padding-left: 20px; /* Отступ для маркеров списка */
+  padding-left: 20px;
   margin-bottom: 24px;
 }
 
@@ -229,17 +228,17 @@ h2 {
 
 
 /* --- Адаптивность --- */
-@media (max-width: 768px) {
-  .main-title, .privacy-content h1 {
-    font-size: 32px;
-  }
+@media (max-width: 900px) { /* Изменил точку перелома для скриншотов */
   .screenshots-container img {
-    width: 45%;
+    width: 45%; /* Два скриншота в ряд на планшетах */
   }
 }
 
 @media (max-width: 480px) {
+  .main-title, .privacy-content h1 {
+    font-size: 32px;
+  }
   .screenshots-container img {
-    width: 90%;
+    width: 90%; /* Один скриншот в ряд на телефонах */
   }
 }
