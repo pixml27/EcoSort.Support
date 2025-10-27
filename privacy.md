@@ -3,6 +3,7 @@ layout: default
 title: EcoSort.app
 description: AI-powered recycling assistant
 ---
+
 <body>
 
     <div class="container">
@@ -12,17 +13,17 @@ description: AI-powered recycling assistant
         </header>
 
         <main class="privacy-content">
-            <h1>Privacy Policy for EcoSort.Barcelona</h1>
+            <h1>Privacy Policy for EcoSort</h1>
 
             <div class="meta-info">
                 <p><strong>Effective Date:</strong> June 24, 2025</p>
-                <p><strong>Last Updated:</strong> June 24, 2025</p>
+                <p><strong>Last Updated:</strong> October 26, 2025</p>
             </div>
 
             <h2>1. Introduction</h2>
-            <p>Welcome to EcoSort.Barcelona! This Privacy Policy describes how Arsenii Koriaigin ("we," "us," or "our") collects, uses, processes, and safeguards your information when you use our mobile application, EcoSort.Barcelona (the "App").</p>
-            <p>We are committed to protecting your privacy and handling your data in an open and transparent manner. This Privacy Policy has been compiled to comply with the General Data Protection Regulation (GDPR) and to inform you of your rights and our responsibilities.</p>
-            <p>By using the EcoSort.Barcelona App, specifically by acknowledging this Privacy Policy before using features that process personal data (like the camera), you agree to the collection and use of information in accordance with this policy.</p>
+            <p>Welcome to EcoSort! This Privacy Policy describes how Arsenii Koriaigin ("we," "us," or "our") collects, uses, processes, and safeguards your information when you use our mobile application, EcoSort (the "App").</p>
+            <p>EcoSort helps users identify the correct waste disposal category based on photos and provides recommendations according to local recycling rules in supported countries: Spain, Portugal, Italy, Austria, France, Germany, and the Netherlands.</p>
+            <p>We are committed to protecting your privacy and handling your data in accordance with the General Data Protection Regulation (GDPR). By using EcoSort, you agree to the practices described in this Privacy Policy.</p>
             <p>This Privacy Policy is available in multiple languages within the App.</p>
 
             <h2>2. Data Controller</h2>
@@ -32,111 +33,141 @@ description: AI-powered recycling assistant
             Barcelona, Spain</p>
 
             <h2>3. What Information We Collect and Why</h2>
-            <p>We collect minimal information necessary to provide and improve our App's functionality. The types of data collected are:</p>
+            <p>We collect minimal information necessary to operate and improve the App.</p>
 
             <h3>a) Image Data (Photos from Camera or Gallery)</h3>
             <ul>
                 <li><strong>How it's collected:</strong> The App captures photos using your device's camera or allows you to select images from your device's gallery when you choose to use the image classification feature.</li>
                 <li><strong>What is collected:</strong> The image file (temporarily stored as an <code>XFile</code> object).</li>
-                <li><strong>Processing:</strong> Images are processed on your device to be resized and compressed before being sent for analysis.</li>
-                <li><strong>Purpose:</strong> To provide you with an AI-powered classification or rating related to the content of the image.</li>
-                <li><strong>Storage & Retention:</strong> Images are <strong>not</strong> permanently stored on your device or our servers. They are used only for the immediate classification request and then discarded.</li>
+                <li><strong>Processing:</strong> Images are processed on your device to be resized and compressed before being sent for AI analysis using Google's API.</li>
+                <li><strong>Purpose:</strong> To identify the correct waste disposal bin and provide local recycling instructions.</li>
+                <li><strong>Storage & Retention:</strong> Images are not permanently stored on your device or our servers. They are used only for the immediate classification request and then discarded.</li>
                 <li><strong>Legal Basis for Processing:</strong> Your explicit <strong>consent</strong>. You are required to acknowledge this Privacy Policy before accessing camera functionalities for the first time.</li>
             </ul>
 
-            <h3>b) Language Preferences</h3>
+            <h3>b) User Account and Authentication Data</h3>
             <ul>
-                <li><strong>How it's collected:</strong> When you set or change your preferred language within the App.</li>
-                <li><strong>What is collected:</strong> Your chosen language code (e.g., 'en', 'es', 'fr', 'ca').</li>
-                <li><strong>Storage:</strong> This preference is stored locally on your device.</li>
-                <li><strong>Purpose:</strong> To display the App's content in your preferred language.</li>
-                <li><strong>Retention:</strong> This preference persists on your device until you change it or clear the App's data.</li>
-                <li><strong>Legal Basis for Processing:</strong> Our <strong>legitimate interest</strong> in providing a user-friendly and accessible experience, and your implied consent when selecting a language.</li>
+                <li><strong>How it's collected:</strong> When you register, sign in, or continue as an anonymous user.</li>
+                <li><strong>What is collected:</strong> uid, email (if provided), emailVerified, isAnonymous, isPro, monthScanCount, ScanCount, monthScanLimit, createdAt, firstScanMonthPeriod, lastScanMonthPeriod, proStartMonthPeriod, proLastMonthPeriod, proSubscriptionsCount, and optionally sex and dateOfBirth.</li>
+                <li><strong>Purpose:</strong> To manage user access, scan limits, and premium features, and to provide a consistent experience across sessions.</li>
+                <li><strong>Storage:</strong> Stored securely in Firebase Firestore.</li>
+                <li><strong>Retention:</strong> Until account deletion or 12 months of inactivity.</li>
+                <li><strong>Legal Basis for Processing:</strong> Performance of a contract (to provide App functionality), legitimate interest (to maintain fair usage), and consent (for optional data).</li>
             </ul>
 
-            <h3>c) API Usage Tracking Data (for Rate Limiting)</h3>
+            <h3>c) Scan Records</h3>
             <ul>
-                 <li><strong>How it's collected:</strong> Automatically tracked when you use the image classification feature.</li>
-                 <li><strong>What is collected:</strong> A counter for API requests made within a minute(a day) and the timestamp of the first request in that minute (day).</li>
-                 <li><strong>Storage:</strong> This data is stored locally on your device.</li>
-                 <li><strong>Purpose:</strong> To manage API usage and prevent abuse of the service by applying rate limits.</li>
-                 <li><strong>Retention:</strong> This data is automatically reset when the respective time periods (minute or day) expire.</li>
-                 <li><strong>Legal Basis for Processing:</strong> Our <strong>legitimate interest</strong> in maintaining the stability, security, and fair use of our service and the third-party API.</li>
+                <li><strong>How it's collected:</strong> Automatically when you perform a classification.</li>
+                <li><strong>What is collected:</strong> userId, scanId, createdAt, scan_country, scan_language, bin_color_english, and additional_instructions returned by the AI.</li>
+                <li><strong>Purpose:</strong> To display results, manage usage limits, and improve system reliability.</li>
+                <li><strong>Storage:</strong> Stored in Firestore; used for service analytics and troubleshooting, not for profiling.</li>
+                <li><strong>Retention:</strong> Up to 12 months, after which data may be anonymized.</li>
+                <li><strong>Legal Basis for Processing:</strong> Legitimate interest and performance of a contract.</li>
+            </ul>
+
+            <h3>d) Language and Country Settings</h3>
+            <ul>
+                <li><strong>How it's collected:</strong> When you choose your preferred language or country in the App.</li>
+                <li><strong>What is collected:</strong> Language code (e.g., 'en', 'es', 'fr', 'ru', 'zh') and country code (e.g., 'ES', 'PT', 'IT').</li>
+                <li><strong>Storage:</strong> Stored locally on your device.</li>
+                <li><strong>Purpose:</strong> To display localized content and recommendations relevant to your region.</li>
+                <li><strong>Retention:</strong> Persist until you change it or clear app data.</li>
+                <li><strong>Legal Basis for Processing:</strong> Legitimate interest in usability and localization.</li>
+            </ul>
+
+            <h3>e) API Usage Tracking (Rate Limiting)</h3>
+            <ul>
+                <li><strong>How it's collected:</strong> Automatically when you use the classification feature.</li>
+                <li><strong>What is collected:</strong> Local counters for number of scans and timestamps for each usage period.</li>
+                <li><strong>Storage:</strong> Stored locally on your device.</li>
+                <li><strong>Purpose:</strong> To prevent abuse and maintain fair use limits.</li>
+                <li><strong>Retention:</strong> Automatically reset after the relevant time period (minute/day).</li>
+                <li><strong>Legal Basis for Processing:</strong> Legitimate interest in maintaining service stability.</li>
             </ul>
 
             <h2>4. How We Use Your Information</h2>
-            <p>We use the collected information solely for the following purposes:</p>
+            <p>We use collected data to:</p>
             <ul>
-                <li><strong>To provide App functionality:</strong> Classifying images as requested by you and displaying the App in your chosen language.</li>
-                <li><strong>To maintain and protect our services:</strong> Implementing rate limits to ensure service availability and prevent abuse.</li>
-                <li><strong>To comply with legal obligations.</strong></li>
+                <li>Provide App functionality (classification, recommendations, account management).</li>
+                <li>Maintain fair use limits and prevent misuse.</li>
+                <li>Improve reliability and ensure compliance with applicable recycling regulations.</li>
+                <li>Comply with legal obligations.</li>
             </ul>
+            <p>We do not sell or share your personal data for advertising or marketing purposes.</p>
             
             <h2>5. Data Sharing and Third Parties</h2>
-            <h3>a) Google's AI API</h3>
-            <p>To provide the image classification feature, we send compressed image data you provide to Google's AI API.</p>
-            <p><strong>Important Considerations:</strong></p>
-            <ul>
-                <li><strong>No other personal identifiers are sent with these requests.</strong> We do not send your IP address, device identifiers, or any other personal information to Google's AI API through our App, beyond the image.</li>
-                <li>Google acts as a <strong>data processor</strong> for this information, meaning they process the data on our behalf and according to our instructions (and their own terms of service and privacy policies for the AI API).</li>
-                <li>We encourage you to review Google's own privacy policies to understand how they handle data.</li>
-            </ul>
-            <h3>b) Other Third Parties</h3>
-            <p>We do not share your personal data with any other third parties, except as required by law.</p>
+
+            <h3>a) Firebase (Google Cloud Platform)</h3>
+            <p>We use Firebase Authentication, Firestore Database, and Firebase Cloud Functions to securely manage user accounts, process classification requests, and handle backend logic. Google acts as a data processor under our instructions and in accordance with GDPR.</p>
+            <p><strong>Cloud Functions & Logging:</strong> Firebase Cloud Functions may temporarily log technical information such as execution time, error codes, and IP address in an anonymized form for debugging and security monitoring. These logs are automatically deleted within 30 days.</p>
+            <p>Learn more: <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></p>
+
+            <h3>b) Google's AI API</h3>
+            <p>To provide image classification, we send compressed images to Google's AI API. No personal identifiers (UID, email, IP address) are included. Google acts as a data processor, handling requests per our instructions and applicable privacy agreements.</p>
+
+            <h3>c) Other Third Parties</h3>
+            <p>We do not share your personal data with other third parties except as required by law or to comply with legal obligations.</p>
             
             <h2>6. Data We DO NOT Collect</h2>
-            <p>We are committed to data minimization. EcoSort.Barcelona <strong>does not</strong> collect:</p>
+            <p>EcoSort does not collect or store:</p>
             <ul>
-                <li>Personal identifiers (e.g., name, email address, physical address beyond what you might voluntarily provide for contact).</li>
-                <li>User accounts (you can use the App without creating an account).</li>
-                <li>Precise location data (GPS).</li>
-                <li>Device identifiers (e.g., IMEI, MAC address).</li>
-                <li>Detailed analytics or usage patterns beyond the aggregated API rate limiting counts.</li>
+                <li>GPS or precise location data.</li>
+                <li>Device identifiers (IMEI, MAC address, advertising ID).</li>
+                <li>Behavioral analytics or tracking cookies.</li>
+                <li>Contacts, messages, or other personal data stored on your device.</li>
             </ul>
+            <p>We do not use personalized tracking or advertising SDKs.</p>
 
             <h2>7. Data Retention</h2>
-            <p>We retain your data only for as long as necessary to fulfill the purposes outlined in this Privacy Policy:</p>
+            <p>We retain your data only as long as necessary to fulfill the purposes outlined in this Privacy Policy:</p>
             <ul>
-                <li><strong>Image Data:</strong> Not stored. Processed ephemerally for each request.</li>
-                <li><strong>Language Preference:</strong> Stored on your device until you change it or clear app data.</li>
-                <li><strong>API Usage Tracking Data:</strong> Automatically reset after the defined time period (minute/day) expires.</li>
+                <li><strong>Image Data:</strong> Not stored.</li>
+                <li><strong>User Account Data:</strong> Until account deletion or 12 months of inactivity.</li>
+                <li><strong>Scan Records:</strong> Up to 12 months, then anonymized.</li>
+                <li><strong>Cloud Function Logs:</strong> Up to 30 days, automatically deleted.</li>
+                <li><strong>Language and API Tracking Data:</strong> Stored locally until you clear app data.</li>
             </ul>
 
             <h2>8. Data Security</h2>
-            <p>We implement reasonable technical and organizational measures to protect the information we handle. Image processing (resizing, compression) happens on your device before any data is sent externally. However, please remember that no method of transmission over the internet or method of electronic storage is 100% secure.</p>
+            <p>We implement technical and organizational measures to protect your data, including HTTPS encryption, Firebase security rules, and access controls. Image processing occurs on your device before transmission. However, no method of data transmission over the Internet is 100% secure.</p>
 
             <h2>9. Data Processing Location</h2>
             <ul>
-                <li><strong>On-Device Processing:</strong> Image resizing and compression, language preference storage, and API rate limit tracking occur on your device.</li>
-                <li><strong>External Processing:</strong> AI-based image classification is performed by Google's AI, which means the image data and prompt are processed on Google's servers. These servers may be located outside of your country of residence.</li>
+                <li><strong>On-device:</strong> language and country preferences, rate limit tracking, and image preprocessing.</li>
+                <li><strong>Firebase (Google Cloud):</strong> account data, scans, and backend functions.</li>
+                <li><strong>Google AI API:</strong> image classification.</li>
             </ul>
+            <p>Data may be processed on servers located outside your country, including in the European Union and the United States.</p>
 
             <h2>10. International Data Transfers</h2>
-            <p>When you use the image classification feature, your image data are transferred to Google's servers, which may be located in countries outside the European Economic Area (EEA). Google employs measures like Standard Contractual Clauses (SCCs) to ensure that such transfers comply with GDPR requirements for data protection.</p>
+            <p>Data processed through Firebase and Google AI may be transferred outside the European Economic Area (EEA). Google applies Standard Contractual Clauses (SCCs) and other appropriate safeguards to ensure GDPR compliance.</p>
 
             <h2>11. Your Rights Under GDPR</h2>
-            <p>As a user in the European Union, you have the following rights regarding your personal data:</p>
+            <p>You have the right to:</p>
             <ul>
-                <li><strong>The right to be informed:</strong> To know how your data is being processed (which this Policy aims to do).</li>
-                <li><strong>The right of access:</strong> To request a copy of the personal data we hold about you.</li>
-                <li><strong>The right to rectification:</strong> To request correction of inaccurate or incomplete data.</li>
-                <li><strong>The right to erasure (right to be forgotten):</strong> To request deletion of your personal data, under certain conditions.</li>
-                <li><strong>The right to restrict processing:</strong> To request the limitation of how we use your data, under certain conditions.</li>
-                <li><strong>The right to data portability:</strong> To receive your data in a structured, commonly used, and machine-readable format and to transmit it to another controller, under certain conditions.</li>
-                <li><strong>The right to object:</strong> To object to the processing of your data, under certain conditions (e.g., for direct marketing, or processing based on legitimate interests).</li>
-                <li><strong>Rights related to automated decision-making and profiling:</strong> You have the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning you or similarly significantly affects you, except under certain conditions. (While our AI classification provides a rating, it should not produce legal or similarly significant effects without human oversight).</li>
+                <li>Be informed about how your data is used.</li>
+                <li>Access and obtain a copy of your data.</li>
+                <li>Rectify inaccurate or incomplete data.</li>
+                <li>Request erasure of your data ("right to be forgotten").</li>
+                <li>Restrict or object to certain processing.</li>
+                <li>Request data portability.</li>
+                <li>Withdraw consent at any time.</li>
             </ul>
-            <p>To exercise any of these rights, please contact us at the email address provided in Section 2. We will respond to your request within one month, as required by GDPR.</p>
-            
+            <p>To exercise your rights, contact us at <a href="mailto:akor@ecosort.app">akor@ecosort.app</a>. We will respond within one month as required by GDPR.</p>
+
             <h2>12. Children's Privacy</h2>
-            <p>EcoSort.Barcelona is not intended for use by children under the age of 16 (or the applicable age of consent in your jurisdiction). We do not knowingly collect personal data from children. If we become aware that we have inadvertently collected personal data from a child, we will take steps to delete such information as soon as possible.</p>
-            
-            <h2>13. Changes to This Privacy Policy</h2>
-            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy within the App and updating the "Last Updated" date at the top of this Privacy Policy. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted.</p>
-            
-            <h2>14. Contact Us</h2>
-            <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us!</p>
-            <p>Thank you for using EcoSort.Barcelona!</p>
+            <p>EcoSort is not intended for users under the age of 16. We do not knowingly collect data from children. If we become aware that a child has provided personal information, we will delete it promptly.</p>
+
+            <h2>13. Disclaimer of Liability</h2>
+            <p>EcoSort provides recycling guidance based on publicly available and municipal waste-sorting rules for supported countries. While we strive for accuracy, we cannot guarantee the completeness or correctness of all recommendations. EcoSort should not be relied upon as a legally binding or official source. Always verify with your local waste authority when in doubt.</p>
+
+            <h2>14. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. Updates will be posted within the App and indicated by an updated "Last Updated" date. Continued use of the App after changes constitutes acceptance of the revised Privacy Policy.</p>
+
+            <h2>15. Contact Us</h2>
+            <p>If you have any questions, concerns, or data-related requests, please contact us:</p>
+            <p><a href="mailto:akor@ecosort.app">akor@ecosort.app</a></p>
+            <p>Thank you for using EcoSort!</p>
 
         </main>
     </div>
