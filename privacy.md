@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: EcoSort.app
 description: AI-powered recycling assistant
 ---
