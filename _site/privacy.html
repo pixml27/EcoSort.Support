@@ -117,13 +117,6 @@
       font-family: 'Poppins', sans-serif;
     }
     
-    /* Стили для H1 на .page-layout */
-    .page-layout h1 {
-      font-size: 48px;
-      font-weight: 500;
-      margin-bottom: 24px;
-    }
-    
     .callout p{color:var(--muted);max-width:46ch}
     
     /* === НОВЫЙ СТИЛЬ: для доп. текста в .callout === */
@@ -292,6 +285,7 @@
       margin-top: 0;
       background: #fff;
       border-top: 1px solid var(--border-color); 
+      height: 500px; /* === ИЗМЕНЕНИЕ 1 === */
     }
     .localized-block .col {
       flex: 1;
@@ -334,6 +328,7 @@
       margin-top: 0;
       background: #fff;
       border-top: 1px solid var(--border-color); 
+      height: 500px; /* === ИЗМЕНЕНИЕ 2 === */
     }
     .disclaimer-block .col {
       flex: 1;
@@ -364,6 +359,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      /* === Добавлено: чтобы колонка не была выше 100% (500px) === */
+      height: 100%; 
+      overflow: hidden;
     }
     .disclaimer-block .col.disclaimer-image-col img {
       max-width: 100%;
@@ -514,12 +512,18 @@
       }
       
       /* === ИЗМЕНЕНИЕ: Responsive для localized-block === */
+      .localized-block {
+        height: auto; /* === ИЗМЕНЕНИЕ 3 === */
+      }
       .localized-block .col.countries-col {
         border-left: none;
         border-top: 1px solid var(--border-color); /* Граница сверху на мобильных */
       }
       
       /* === ИЗМЕНЕНИЕ: Responsive для disclaimer-block === */
+      .disclaimer-block {
+        height: auto; /* === ИЗМЕНЕНИЕ 4 === */
+      }
       .disclaimer-block .col.disclaimer-image-col {
         border-left: none;
         border-top: 1px solid var(--border-color);
