@@ -367,20 +367,7 @@
     }
     /* === КОНЕЦ НОВОГО БЛОКА === */
 
-    /* === НОВЫЙ БЛОК: Карта (ДОБАВЛЕНО ПО ЗАПРОСУ) === */
-    .image-map-block {
-      border-top: 1px solid var(--border-color);
-      background: #fff; /* Фон можно изменить по желанию */
-      padding: 0;
-      line-height: 0; /* Убрать 'whitespace' под картинкой */
-    }
-    .image-map-block img {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin: 0 auto;
-    }
-    /* === КОНЕЦ НОВОГО БЛОКА === */
+    /* === БЛОК КАРТЫ УДАЛЕН === */
 
 
     /* About two-column reversed (image left, text right) */
@@ -711,9 +698,6 @@
     </div>
   </section>
   
-  <section class="image-map-block">
-    <img src="{{ '/screenshots/mappng-01.png' | relative_url }}" alt="Map of supported regions">
-  </section>
   <section class="disclaimer-block" id="disclaimer">
     <div class="col disclaimer-text-col">
       <h2>DISCLAIMER</h2>
@@ -745,8 +729,7 @@
 </li>
         <li>
           <div class="social-links">
-            <a href="#">INSTAGRAM</a>
-            <a href="#">LINKEDIN</a>
+            <a href="https://www.linkedin.com/company/109600415">LINKEDIN</a>
           </div>
         </li>
       </ul>
@@ -765,7 +748,7 @@
 
 </div>
         <nav class="footer-nav">
-          <a href="#">Privacy Policy</a>
+          <a href="{{ 'privacy.md' | relative_url }}">Privacy Policy</a>
         </nav>
       </div>
       <div class="footer-bottom">
