@@ -19,7 +19,7 @@
       --g: 24px;
       
       font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
-      --border-color: #7F827C; /* CSS-переменная для цвета границы */
+      --border-color: #e4e4e4; /* CSS-переменная для цвета границы */
     }
     *{box-sizing:border-box}
     body{margin:0;color:var(--text);line-height:1.3}
@@ -39,6 +39,10 @@
     header.site-header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     header .logo{display:flex;align-items:center;gap:12px}
     header .logo img{height:44px;width:auto}
+/* === ИЗМЕНЕНИЕ: Делаем .wrap в шапке на всю ширину === */
+.site-header-wrapper .wrap {
+  max-width: none;
+}
     
     
     nav.site-nav a{
@@ -48,7 +52,22 @@
       font-weight: 400; /* Regular */
       font-size: 14px;
       text-transform: uppercase; /* ЗАГЛАВНЫЕ БУКВЫ */
+      vertical-align: middle; /* Добавлено для выравнивания */
     }
+    
+    /* === НОВЫЕ СТИЛИ: для обертки навигации и кнопки === */
+    header .nav-and-button {
+      display: flex;
+      align-items: center;
+      gap: 18px; 
+    }
+    
+    .btn.header-download-btn {
+      margin-top: 0;
+      vertical-align: middle; /* Добавлено для выравнивания */
+    }
+    /* === КОНЕЦ НОВЫХ СТИЛЕЙ === */
+
 
     /* Hero big title */
     .hero{
@@ -78,10 +97,23 @@
       font-weight: 500;
     }
     
+    /* === ИЗМЕНЕНО: Стили для выравнивания иконки === */
     .subtitle-wrap {
       max-width: var(--container);
       margin: 0 auto;
       padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px; /* Отступ между иконкой и текстом */
+      flex-wrap: wrap; /* Для переноса на маленьких экранах */
+    }
+    
+    /* === НОВЫЙ СТИЛЬ: для иконки в подзаголовке === */
+    .subtitle-wrap img {
+      height: 16px; /* Размер иконки */
+      width: auto;
+      animation: rotate-pause 4s linear infinite; /* Та же анимация */
     }
 
 
@@ -211,7 +243,7 @@
       margin-top: 0;
     }
     .intro-about-block .wrap {
-      border-bottom: 1px solid var(--border-color); /* Граница под заголовком */
+      /* border-bottom: 1px solid var(--border-color); <-- ИЗМЕНЕНО: Удалено */
       padding-top: 20px;
       padding-bottom: 20px;
     }
@@ -233,7 +265,7 @@
       animation: rotate-pause 4s linear infinite;
     }
     
-    /* Keyframes для вращения с паузой */
+    /* Keyframes для вращения с паузой (этот блок уже существует) */
     @keyframes rotate-pause {
       0% { transform: rotate(0deg); }
       40% { transform: rotate(360deg); } /* Вращение (2s) */
@@ -245,15 +277,16 @@
       gap: 0;
       align-items: stretch;
       background: #fff;
+      border-top: 1px solid var(--border-color); /* ИЗМЕНЕНО: Добавлено */
     }
     .intro-about-block .content-cols .image-col {
-      flex: 1;
+      flex: 0 0 50%; /* ИЗМЕНЕНО: 50% */
       background-size: cover;
       background-position: center;
       min-height: 500px; /* Фиксированная высота для картинки */
     }
     .intro-about-block .content-cols .text-col {
-      flex: 1;
+      flex: 0 0 50%; /* ИЗМЕНЕНО: 50% */
       padding: 48px;
       /* === ИЗМЕНЕНИЕ: Цвет фона === */
       background: #E9FCD7;
@@ -288,15 +321,15 @@
       height: 500px; /* === ИЗМЕНЕНИЕ 1 === */
     }
     .localized-block .col {
-      flex: 1;
+      flex: 0 0 50%; /* ИЗМЕНЕНО: 50% */
       padding: 48px;
     }
     .localized-block .col.title-col {
-      background: var(--accent);
-      flex: 1;
+      background: #E9FCD7;
+      /* flex: 1; <-- ИЗМЕНЕНО: Удалено */
     }
     .localized-block .col.countries-col {
-      flex: 1;
+      /* flex: 1; <-- ИЗМЕНЕНО: Удалено */
       border-left: 1px solid var(--border-color); /* Граница между колонками */
     }
     .localized-block .countries-list {
@@ -319,6 +352,20 @@
       line-height: 1.5;
     }
     
+/* === НОВЫЙ БЛОК: КАРТА ВО ВСЮ ШИРИНУ === */
+    .full-width-map-section {
+      border-top: 1px solid var(--border-color);
+      /* Убираем "зазор" под картинкой, 
+         который браузеры добавляют по умолчанию */
+      line-height: 0; 
+    }
+    .full-width-map-section img {
+      width: 100%; /* Растягиваем на 100% ширины */
+      height: auto; /* Сохраняем пропорции */
+      display: block; /* Убирает "зазор" под картинкой */
+    }
+    /* === КОНЕЦ БЛОКА === */
+    
 
     /* === НОВЫЙ БЛОК: Disclaimer === */
     .disclaimer-block {
@@ -331,16 +378,17 @@
       height: 500px; /* === ИЗМЕНЕНИЕ 2 === */
     }
     .disclaimer-block .col {
-      flex: 1;
-      padding: 48px;
+      flex: 0 0 50%; /* ИЗМЕНЕНО: 50% */
+      padding: 48px; /* Этот отступ остается для текстовой колонки */
     }
     .disclaimer-block .col.disclaimer-text-col {
-      background: #fff; 
-      flex: 1;
+      background: #E9FCD7;
+      /* flex: 1; <-- ИЗМЕНЕНО: Удалено */
       display: flex;
       flex-direction: column;
       justify-content: space-between; 
       height: auto; 
+      border-left: 1px solid var(--border-color); 
     }
     .disclaimer-block .col.disclaimer-text-col h2 {
       font-size: 48px; 
@@ -353,28 +401,24 @@
       max-width: 50ch; 
     }
     .disclaimer-block .col.disclaimer-image-col {
-      flex: 1;
-      border-left: 1px solid var(--border-color); 
+      /* flex: 1; <-- ИЗМЕНЕНО: Удалено */
       background: #fdfdfa; 
       display: flex;
       align-items: center;
       justify-content: center;
-      /* === Добавлено: чтобы колонка не была выше 100% (500px) === */
       height: 100%; 
       overflow: hidden;
+      padding: 0; 
     }
     .disclaimer-block .col.disclaimer-image-col img {
       max-width: 100%;
       height: auto;
       max-height: 100%; 
+      width: 100%; 
+      height: 100%;
+      object-fit: cover; 
     }
     /* === КОНЕЦ НОВОГО БЛОКА === */
-
-    /* === БЛОК КАРТЫ УДАЛЕН === */
-
-
-    /* About two-column reversed (image left, text right) */
-    /* .about-section, содержавший .about, удален */
 
 
     /* === НОВЫЙ БЛОК: Contact === */
@@ -387,17 +431,16 @@
       margin-bottom: 0; /* Убираем отступ перед футером */
     }
     .contact-block .image-col {
-      flex: 1;
+      flex: 0 0 50%; /* ИЗМЕНЕНО: 50% */
       background-size: cover;
       background-position: center;
       min-height: 500px;
+      border-left: 1px solid var(--border-color); 
     }
     .contact-block .contact-text-col {
-      flex: 1;
+      flex: 0 0 50%; /* ИЗМЕНЕНО: 50% */
       padding: 48px;
-      /* === ИЗМЕНЕНИЕ: Цвет фона === */
       background: #E9FCD7;
-      border-left: 1px solid var(--border-color); /* Граница между колонками */
     }
     .contact-block h2 {
       font-size: 48px; /* Стиль уже применен выше */
@@ -526,20 +569,22 @@
       }
       .disclaimer-block .col.disclaimer-image-col {
         border-left: none;
-        border-top: 1px solid var(--border-color);
-        padding: 60px 20px; /* Добавляем отступы для картинки на мобильных */
+        padding: 0; 
       }
       .disclaimer-block .col.disclaimer-text-col {
         gap: 24px; /* Добавляем отступ между H2 и P на мобильных */
+        border-left: none; 
+        border-top: 1px solid var(--border-color); 
       }
       
       /* === ИЗМЕНЕНИЕ: Responsive для contact-block === */
       .contact-block .image-col {
         min-height: 300px; /* Уменьшаем высоту картинки на мобильных */
+        border-left: none; 
+        border-top: 1px solid var(--border-color); 
       }
       .contact-block .contact-text-col {
-        border-left: none;
-        border-top: 1px solid var(--border-color);
+         /* Стили границ были здесь, но теперь они на image-col для мобильных */
       }
       
       /* === ИЗМЕНЕНИЕ: Responsive для intro-about-block === */
@@ -553,7 +598,24 @@
 
 
       header .logo img{height:36px}
-      nav.site-nav{margin-top:8px}
+      
+      /* === ИЗМЕНЕНИЕ: Responsive для шапки === */
+      header .nav-and-button {
+         flex-direction: column;
+         align-items: flex-end; 
+         gap: 8px; 
+      }
+      nav.site-nav{
+        margin-top:0; /* Сбрасываем старый отступ */
+        display: flex; /* === Добавлено для моб. === */
+        flex-direction: column; /* === Добавлено для моб. === */
+        align-items: flex-end; /* === Добавлено для моб. === */
+        gap: 8px; /* === Добавлено для моб. === */
+      }
+      
+      nav.site-nav a {
+        margin-left: 0; /* === Добавлено для моб. === */
+      }
       
       
       .hero .title{font-size: 130px;} 
@@ -592,12 +654,17 @@
         <div class="logo">
           <a href="/"><img src="/screenshots/logo.svg" alt="EcoSort logo"></a>
         </div>
-        <nav class="site-nav">
-          <a href="/#intro">About</a>
-          <a href="/#features">How to use</a>
-          <a href="/#screenshots">Screenshots</a>
-          <a href="/#contact">Contact</a>
-        </nav>
+        
+        <div class="nav-and-button">
+          <nav class="site-nav">
+            <a href="#" class="btn header-download-btn">DOWNLOAD</a>
+            <a href="/#about">About</a>
+            <a href="/#screenshots">How to use</a>
+            <a href="/#features">Locations</a>
+            <a href="/#contact">Contact</a>
+          </nav>
+        </div>
+        
       </header>
     </div>
   </div>
