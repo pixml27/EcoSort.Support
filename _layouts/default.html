@@ -42,103 +42,69 @@
       padding: 0 20px
     }
 
-    /* === СТИЛИ ДЛЯ КНОПОК СТОРОВ (RESTORED) === */
-    .store-btns {
-      display: flex;
-      gap: 10px;
-      /* margin-top: 18px; <-- Убираем отступ здесь, чтобы в шапке было ровно */
-      flex-wrap: wrap;
+    /* === 1. Липкая Шапка: Обертка === */
+    .site-header-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid var(--border-color);
+      /* Граница для шапки */
     }
 
-    .store-btn {
-      display: inline-flex;
+    /* Header */
+    header.site-header {
+      display: flex;
       align-items: center;
-      background: #000;
-      color: #fff !important;
-      /* FIX: !important, чтобы текст не был черным из-за стилей меню */
-      border-radius: 8px;
-      padding: 6px 14px;
-      text-decoration: none !important;
-      /* FIX: убираем подчеркивание */
-      transition: transform 0.2s, opacity 0.2s;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      /* Легкая граница для красоты */
-      text-transform: none !important;
-      /* FIX: Отменяем капс (как в меню) для этих кнопок */
+      justify-content: space-between;
+      padding: 12px 0
     }
 
-    .store-btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
-
-    .store-btn svg {
-      width: 24px;
-      height: 24px;
-      margin-right: 10px;
-      fill: #fff;
-      flex-shrink: 0;
-    }
-
-    .store-btn-content {
+    header .logo {
       display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-      align-items: flex-start;
-      text-align: left;
-      /* Выравнивание текста внутри кнопки */
+      align-items: center;
+      gap: 12px
     }
 
-    .store-btn-content small {
-      font-size: 9px;
-      text-transform: uppercase;
-      opacity: 0.8;
+    header .logo img {
+      height: 44px;
+      width: auto
+    }
+
+    /* === ИЗМЕНЕНИЕ: Делаем .wrap в шапке на всю ширину === */
+    .site-header-wrapper .wrap {
+      max-width: none;
+    }
+
+
+    nav.site-nav a {
+      margin-left: 18px;
+      text-decoration: none;
+      color: var(--text);
       font-weight: 400;
-    }
-
-    .store-btn-content span {
+      /* Regular */
       font-size: 14px;
-      font-weight: 600;
-      white-space: nowrap;
-      font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      text-transform: uppercase;
+      /* ЗАГЛАВНЫЕ БУКВЫ */
+      vertical-align: middle;
+      /* Добавлено для выравнивания */
     }
 
-    /* === ВАЖНОЕ ИСПРАВЛЕНИЕ ДЛЯ ШАПКИ === */
-    /* Делаем навигацию Flex-контейнером, чтобы div с кнопками и ссылки a встали в один ряд */
-    header nav.site-nav {
+    /* === НОВЫЕ СТИЛИ: для обертки навигации и кнопки === */
+    header .nav-and-button {
       display: flex;
       align-items: center;
       gap: 18px;
-      /* Отступ между группой кнопок и ссылкой About */
     }
 
-    header .store-btns {
+    .btn.header-download-btn {
       margin-top: 0;
-      /* В шапке отступ сверху не нужен */
+      vertical-align: middle;
+      /* Добавлено для выравнивания */
     }
 
-    /* Убираем старый отступ слева у ссылок, так как теперь используем gap */
-    nav.site-nav a:not(.store-btn) {
-      margin-left: 0;
-    }
-
-    /* Мобильная адаптация */
-    @media (max-width: 880px) {
-      header .nav-and-button {
-        align-items: flex-end;
-      }
-
-      /* На мобильном навигация становится вертикальной */
-      header nav.site-nav {
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 12px;
-      }
-
-      header .store-btns {
-        justify-content: center;
-      }
-    }
+    /* === КОНЕЦ НОВЫХ СТИЛЕЙ === */
 
 
     /* Hero big title */
@@ -944,35 +910,33 @@
         </div>
 
         <div class="nav-and-button">
-          <nav class="site-nav">
+          <div class="store-btns header-download-btn" style="display:inline-flex; vertical-align:middle; gap:8px;">
+            <a href="https://apps.apple.com/app/ecosort-app/id6747254846" class="store-btn" target="_blank">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M363.3 154.2c-15.6-26.6-43.2-43.7-74.8-44.5-31.5-.7-65.7 18.5-83 18.5-17.2 0-45.3-17.7-74.6-17-38.6.6-74.5 22.5-94.4 57-41 71.3-10.4 176.4 29.3 234 19.3 28 42.4 59.4 72.5 58.3 29.3-1.2 40.5-18.7 76-18.7 35.6 0 45.4 18.7 76.5 18 31.4-.6 51.5-28.7 70.4-57.5 22.3-32.3 31.4-63.5 31.8-65.2-.7-.3-61.2-23.5-61.8-93.5-.5-58.5 47.7-86.4 50-87.8-27.4-40.2-69.8-44.7-84.5-45.3zM280.4 39.8c16.6-20 27.8-48 24.8-76.3-24 1-53 16-70.3 36-15.4 17.7-28.9 46.2-25.3 73.5 26.8 2 54.2-13.4 70.8-33.2z" />
+              </svg>
+              <div class="store-btn-content">
+                <small>Download on the</small>
+                <span>App Store</span>
+              </div>
+            </a>
 
-            <div class="store-btns">
-              <a href="https://apps.apple.com/app/ecosort-app/id6747254846" class="store-btn" target="_blank">
-                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M363.3 154.2c-15.6-26.6-43.2-43.7-74.8-44.5-31.5-.7-65.7 18.5-83 18.5-17.2 0-45.3-17.7-74.6-17-38.6.6-74.5 22.5-94.4 57-41 71.3-10.4 176.4 29.3 234 19.3 28 42.4 59.4 72.5 58.3 29.3-1.2 40.5-18.7 76-18.7 35.6 0 45.4 18.7 76.5 18 31.4-.6 51.5-28.7 70.4-57.5 22.3-32.3 31.4-63.5 31.8-65.2-.7-.3-61.2-23.5-61.8-93.5-.5-58.5 47.7-86.4 50-87.8-27.4-40.2-69.8-44.7-84.5-45.3zM280.4 39.8c16.6-20 27.8-48 24.8-76.3-24 1-53 16-70.3 36-15.4 17.7-28.9 46.2-25.3 73.5 26.8 2 54.2-13.4 70.8-33.2z" />
-                </svg>
-                <div class="store-btn-content">
-                  <small>Download on the</small>
-                  <span>App Store</span>
-                </div>
-              </a>
-
-              <a href="https://play.google.com/store/apps/details?id=com.EcoSort" class="store-btn" target="_blank">
-                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M99.6 15.3C80.8 4.7 64 22 64 45v422c0 23.3 17 39.5 35.6 29.7l344.4-197.8c16.3-9.4 16.3-34.5 0-43.9L99.6 15.3z" />
-                </svg>
-                <div class="store-btn-content">
-                  <small>Get it on</small>
-                  <span>Google Play</span>
-                </div>
-              </a>
-            </div>
-            <a href="{{ '/' | relative_url }}#about">About</a>
-            <a href="{{ '/' | relative_url }}#screenshots">How to use</a>
-            <a href="{{ '/' | relative_url }}#features">Locations</a>
-            <a href="{{ '/' | relative_url }}#contact">Contact</a>
+            <a href="https://play.google.com/store/apps/details?id=com.EcoSort" class="store-btn" target="_blank">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M99.6 15.3C80.8 4.7 64 22 64 45v422c0 23.3 17 39.5 35.6 29.7l344.4-197.8c16.3-9.4 16.3-34.5 0-43.9L99.6 15.3z" />
+              </svg>
+              <div class="store-btn-content">
+                <small>Get it on</small>
+                <span>Google Play</span>
+              </div>
+            </a>
+          </div>
+          <a href="{{ '/' | relative_url }}#about">About</a>
+          <a href="{{ '/' | relative_url }}#screenshots">How to use</a>
+          <a href="{{ '/' | relative_url }}#features">Locations</a>
+          <a href="{{ '/' | relative_url }}#contact">Contact</a>
           </nav>
         </div>
 
