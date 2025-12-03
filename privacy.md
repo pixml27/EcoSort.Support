@@ -105,9 +105,15 @@ description: AI-powered recycling assistant
             <h3>b) Google's AI API</h3>
             <p>To provide image classification, we send compressed images to Google's AI API. No personal identifiers (UID, email, IP address) are included. Google acts as a data processor, handling requests per our instructions and applicable privacy agreements.</p>
 
-            <h3>c) Other Third Parties</h3>
+            <h3>c) RevenueCat</h3>
+            <p>We use RevenueCat to manage subscription billing and receipt validation.</p>
+            <p><strong>What is shared:</strong> Anonymous App User IDs and purchase receipt data (transaction history, expiration dates). No credit card information is processed or stored by RevenueCat; financial transactions are handled exclusively by Apple or Google.</p>
+            <p><strong>Purpose:</strong> To determine your subscription status (e.g., whether you have active "Pro" access) and to manage auto-renewals.</p>
+            <p><strong>Legal Basis:</strong> Performance of a contract.</p>
+            <p>Learn more: <a href="https://www.revenuecat.com/privacy">https://www.revenuecat.com/privacy</a></p>
+
+            <h3>d) Other Third Parties</h3>
             <p>We do not share your personal data with other third parties except as required by law or to comply with legal obligations.</p>
-            
             <h2>6. Data We DO NOT Collect</h2>
             <p>EcoSort does not collect or store:</p>
             <ul>

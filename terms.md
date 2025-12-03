@@ -34,7 +34,7 @@ description: AI-powered recycling assistant
             </ul>
 
             <h2>3. Eligibility</h2>
-            <p>You must be at least 13 years old (or the minimum digital consent age in your region) to use the Service.</p>
+            <p>You must be at least 16 years old (or the minimum digital consent age in your region) to use the Service.</p>
 
             <h2>4. License & Acceptable Use</h2>
             <p>The Company grants you a limited, non-exclusive, non-transferable license to use the App for personal, non-commercial purposes.</p>
@@ -123,9 +123,9 @@ description: AI-powered recycling assistant
             <p>These Terms are governed by the laws of Spain and the autonomous community of Catalonia. Disputes shall be resolved in the courts of Barcelona, Spain, unless mandatory law requires otherwise.</p>
 
             <h2>15. Contact Information</h2>
-            <p>If you have questions regarding these Terms, please contact:</p>
-            <p><strong>EcoSort</strong><br>
-            Email: <a href="mailto:akor@ecosort.app">akor@ecosort.app</a></p>
+            <p>Operated by: Arsenii Koriagin (Autónomo)</p>
+            <p>Email: <a href="mailto:akor@ecosort.app">akor@ecosort.app</a></p>
+            <p>Barcelona, Spain</p>
 
         </main>
     </div>
