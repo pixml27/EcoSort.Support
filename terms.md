@@ -18,11 +18,11 @@ description: AI-powered recycling assistant
 
             <div class="meta-info">
                 <p><strong>Effective Date:</strong> December 1, 2025</p>
-                <p><strong>Last Updated:</strong> December 2, 2025</p>
+                <p><strong>Last Updated:</strong> December 3, 2025</p>
             </div>
 
             <h2>1. Introduction</h2>
-            <p>These Terms of Use (“Terms”, “Agreement”) govern your use of EcoSort (“the App”, “the Service”), operated by EcoSort (“the Company”, “we”, “our”). By downloading or using the App, you agree to be bound by these Terms. If you do not agree, you must stop using the Service.</p>
+            <p>These Terms of Use govern your use of EcoSort (“the App”), operated by Arsenii Koriagin, a sole proprietor (autónomo) registered in Spain (the “Company”, “we”, “our”). By downloading or using the App, you agree to be bound by these Terms. If you do not agree, you must stop using the Service.</p>
 
             <h2>2. Definitions</h2>
             <ul>
