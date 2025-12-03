@@ -1,102 +1,158 @@
 <!doctype html>
 <html lang="ru">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>EcoSort</title>
-  
+  <link rel="icon" href="/orig%20favicon%2032x32.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --accent: #D5F05F; /* background for title and some blocks */
+    :root {
+      --accent: #D5F05F;
+      /* background for title and some blocks */
       --accent-dark: #c6e64a;
       --text: #111;
       --muted: #666;
       --container: 1180px;
       --g: 24px;
-      
+
       font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
-      --border-color: #e4e4e4; /* CSS-переменная для цвета границы */
+      --border-color: #e4e4e4;
+      /* CSS-переменная для цвета границы */
     }
-    *{box-sizing:border-box}
-    body{margin:0;color:var(--text);line-height:1.3}
-    .wrap{max-width:var(--container);margin:0 auto;padding:0 20px}
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      line-height: 1.3
+    }
+
+    .wrap {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 20px
+    }
 
     /* === 1. Липкая Шапка: Обертка === */
     .site-header-wrapper {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: #fff; 
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
-      border-bottom: 1px solid var(--border-color); /* Граница для шапки */
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid var(--border-color);
+      /* Граница для шапки */
     }
 
     /* Header */
-    header.site-header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    header .logo{display:flex;align-items:center;gap:12px}
-    header .logo img{height:44px;width:auto}
-/* === ИЗМЕНЕНИЕ: Делаем .wrap в шапке на всю ширину === */
-.site-header-wrapper .wrap {
-  max-width: none;
-}
-    
-    
-    nav.site-nav a{
-      margin-left:18px;
-      text-decoration:none;
-      color:var(--text);
-      font-weight: 400; /* Regular */
-      font-size: 14px;
-      text-transform: uppercase; /* ЗАГЛАВНЫЕ БУКВЫ */
-      vertical-align: middle; /* Добавлено для выравнивания */
+    header.site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0
     }
-    
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    header .logo img {
+      height: 44px;
+      width: auto
+    }
+
+    /* === ИЗМЕНЕНИЕ: Делаем .wrap в шапке на всю ширину === */
+    .site-header-wrapper .wrap {
+      max-width: none;
+    }
+
+
+    nav.site-nav a {
+      margin-left: 10px;
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+      /* Medium weight like buttons */
+      font-size: 14px;
+      text-transform: none;
+      /* Remove uppercase to match button style request if needed, but keeping it consistent with design choice. User said "black text", didn't explicitly say remove caps, but "like buttons" usually implies similar casing. Let's keep it clean. */
+      vertical-align: middle;
+
+      /* Button styling */
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 12px;
+      /* Matching .btn radius */
+      background: transparent;
+      transition: all 0.2s ease;
+    }
+
+    nav.site-nav a:hover {
+      background: #f0f0f0;
+      /* Light grey on hover */
+      opacity: 0.8;
+    }
+
     /* === НОВЫЕ СТИЛИ: для обертки навигации и кнопки === */
     header .nav-and-button {
       display: flex;
       align-items: center;
-      gap: 18px; 
+      gap: 18px;
     }
-    
+
     .btn.header-download-btn {
       margin-top: 0;
-      vertical-align: middle; /* Добавлено для выравнивания */
+      vertical-align: middle;
+      /* Добавлено для выравнивания */
     }
+
     /* === КОНЕЦ НОВЫХ СТИЛЕЙ === */
 
 
     /* Hero big title */
-    .hero{
-      background:var(--accent);
-      padding:28px 0;
+    .hero {
+      background: var(--accent);
+      padding: 28px 0;
     }
-    .hero .wrap { text-align: center; }
-    
-    
-    .hero .title{
-      font-weight: 500; /* Medium */
-      margin:0;
-      padding: 28px 0; 
-      color: #2A2B2A; /* 3. Цвет текста EcoSort */
-      font-size: clamp(106px, 22vw, 400px); 
-      letter-spacing:0.02em;
-      line-height:0.9
+
+    .hero .wrap {
+      text-align: center;
     }
-    
-    
-    .subtitle{
-      background:#fff;
-      text-align:center;
-      padding: 8px 0; 
+
+
+    .hero .title {
+      font-weight: 500;
+      /* Medium */
+      margin: 0;
+      padding: 28px 0;
+      color: #2A2B2A;
+      /* 3. Цвет текста EcoSort */
+      font-size: clamp(106px, 22vw, 400px);
+      letter-spacing: 0.02em;
+      line-height: 0.9
+    }
+
+
+    .subtitle {
+      background: #fff;
+      text-align: center;
+      padding: 8px 0;
       font-size: 13px;
       border-top: 1px solid var(--border-color);
       font-weight: 500;
     }
-    
+
     /* === ИЗМЕНЕНО: Стили для выравнивания иконки === */
     .subtitle-wrap {
       max-width: var(--container);
@@ -105,136 +161,161 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px; /* Отступ между иконкой и текстом */
-      flex-wrap: wrap; /* Для переноса на маленьких экранах */
+      gap: 10px;
+      /* Отступ между иконкой и текстом */
+      flex-wrap: wrap;
+      /* Для переноса на маленьких экранах */
     }
-    
+
     /* === НОВЫЙ СТИЛЬ: для иконки в подзаголовке === */
     .subtitle-wrap img {
-      height: 16px; /* Размер иконки */
+      height: 16px;
+      /* Размер иконки */
       width: auto;
-      animation: rotate-pause 4s linear infinite; /* Та же анимация */
+      animation: rotate-pause 4s linear infinite;
+      /* Та же анимация */
     }
 
 
     /* Two-column block (text left + image right) */
-    .two-cols{
-      display:flex;
+    .two-cols {
+      display: flex;
       gap: 0;
-      align-items:stretch;
-      border-top: 1px solid var(--border-color); 
+      align-items: stretch;
+      border-top: 1px solid var(--border-color);
     }
-    .two-cols .col{flex:1;padding:36px;background:#f7f7f7}
-    
+
+    .two-cols .col {
+      flex: 1;
+      padding: 36px;
+      background: #f7f7f7
+    }
+
     /* === ИЗМЕНЕНИЕ: .callout сделан flex-контейнером === */
-    .callout{
-      background:#fafafa;
-      padding:48px;
+    .callout {
+      background: #fafafa;
+      padding: 48px;
       display: flex;
       flex-direction: column;
     }
-    
-    
+
+
     /* === ИЗМЕНЕНИЕ: Размер шрифта H2 по умолчанию === */
     .callout h2,
     #screenshots h2,
     .localized-block h2,
     .disclaimer-block h2,
-    .contact-block h2, /* Добавлен h2 для contact-block */
-    .intro-about-block h2 /* Добавлен h2 для intro-about-block */
-    {
-      margin:0 0 14px 0;
-      font-size: 48px; /* ИЗМЕНЕНО: по запросу пользователя */
-      font-weight: 500; /* Medium */
+    .contact-block h2,
+    /* Добавлен h2 для contact-block */
+    .intro-about-block h2
+
+    /* Добавлен h2 для intro-about-block */
+      {
+      margin: 0 0 14px 0;
+      font-size: 48px;
+      /* ИЗМЕНЕНО: по запросу пользователя */
+      font-weight: 500;
+      /* Medium */
       font-family: 'Poppins', sans-serif;
     }
-    
-    .callout p{color:var(--muted);max-width:46ch}
-    
+
+    .callout p {
+      color: var(--muted);
+      max-width: 46ch
+    }
+
     /* === НОВЫЙ СТИЛЬ: для доп. текста в .callout === */
     .callout-detail {
       margin-top: 24px;
       font-size: 14px;
       font-weight: 500;
       line-height: 1.4;
-      color: var(--text); 
+      color: var(--text);
       max-width: 46ch;
-      margin-top: auto; /* === ИЗМЕНЕНИЕ: Прижимает текст к низу === */
-      padding-top: 24px; /* Добавляет отступ сверху от кнопки */
+      margin-top: auto;
+      /* === ИЗМЕНЕНИЕ: Прижимает текст к низу === */
+      padding-top: 24px;
+      /* Добавляет отступ сверху от кнопки */
     }
+
     .callout-detail a {
       color: var(--text);
     }
 
     /* === ИЗМЕНЕНИЕ: font-weight и padding кнопки === */
-    .btn{
-      display:inline-block;
-      margin-top:18px;
-      padding: 8px 12px; /* Уменьшены горизонтальные отступы */
-      border-radius:12px;
-      background:var(--accent-dark);
-      color:#111;
-      font-weight:400;
-      text-decoration:none;
-      width: fit-content; /* Добавлено, чтобы ширина была по контенту */
+    .btn {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 8px 12px;
+      /* Уменьшены горизонтальные отступы */
+      border-radius: 12px;
+      background: var(--accent-dark);
+      color: #111;
+      font-weight: 400;
+      text-decoration: none;
+      width: fit-content;
+      /* Добавлено, чтобы ширина была по контенту */
     }
 
     .two-cols .col.image {
       flex: 1;
       background: transparent;
       padding: 0;
-      line-height: 0; 
-      border-left: 1px solid rgba(0,0,0,0.04);
+      line-height: 0;
+      border-left: 1px solid rgba(0, 0, 0, 0.04);
     }
+
     .two-cols .col.image img {
-      display: block; 
+      display: block;
       width: 100%;
-      height: auto; 
+      height: auto;
     }
 
 
     /* Screenshots row */
     #screenshots {
-      border-top: 1px solid var(--border-color); 
-      margin-top: 0; 
+      border-top: 1px solid var(--border-color);
+      margin-top: 0;
     }
+
     #screenshots h2 {
-      margin-bottom: 0; 
+      margin-bottom: 0;
     }
-    .screenshots{
-      display:flex;
-      gap:18px;
-      align-items:flex-start;
-      margin:48px 0; 
-      justify-content: center; 
+
+    .screenshots {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      margin: 48px 0;
+      justify-content: center;
       text-align: center;
-      padding-bottom: 20px; 
+      padding-bottom: 20px;
     }
-    
+
     .shot-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
-      flex: 0 0 350px; 
-    }
-    
-    .shot{
-      background: transparent; 
-      border-radius:30px;
-      padding: 0; 
       flex: 0 0 350px;
-      height:550px;
-      display:flex;
-      align-items:center;
-      justify-content:center
     }
-    
+
+    .shot {
+      background: transparent;
+      border-radius: 30px;
+      padding: 0;
+      flex: 0 0 350px;
+      height: 550px;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
     .shot-caption {
       margin-top: 16px;
       font-size: 16px;
       font-weight: 600;
       color: var(--text);
-      max-width: 280px; 
+      max-width: 280px;
     }
 
     /* === НОВЫЙ БЛОК: Intro About (после HOW TO USE) === */
@@ -242,11 +323,13 @@
       border-top: 1px solid var(--border-color);
       margin-top: 0;
     }
+
     .intro-about-block .wrap {
       /* border-bottom: 1px solid var(--border-color); <-- ИЗМЕНЕНО: Удалено */
       padding-top: 20px;
       padding-bottom: 20px;
     }
+
     .intro-about-block .about-header {
       display: flex;
       align-items: center;
@@ -258,18 +341,30 @@
       padding-left: 20px;
       padding-right: 20px;
     }
+
     .intro-about-block .about-header img {
       height: 48px;
       width: auto;
       /* Анимация вращения */
       animation: rotate-pause 4s linear infinite;
     }
-    
+
     /* Keyframes для вращения с паузой (этот блок уже существует) */
     @keyframes rotate-pause {
-      0% { transform: rotate(0deg); }
-      40% { transform: rotate(360deg); } /* Вращение (2s) */
-      100% { transform: rotate(360deg); } /* Пауза (2s) */
+      0% {
+        transform: rotate(0deg);
+      }
+
+      40% {
+        transform: rotate(360deg);
+      }
+
+      /* Вращение (2s) */
+      100% {
+        transform: rotate(360deg);
+      }
+
+      /* Пауза (2s) */
     }
 
     .intro-about-block .content-cols {
@@ -277,29 +372,38 @@
       gap: 0;
       align-items: stretch;
       background: #fff;
-      border-top: 1px solid var(--border-color); /* ИЗМЕНЕНО: Добавлено */
+      border-top: 1px solid var(--border-color);
+      /* ИЗМЕНЕНО: Добавлено */
     }
+
     .intro-about-block .content-cols .image-col {
-      flex: 0 0 50%; /* ИЗМЕНЕНО: 50% */
+      flex: 0 0 50%;
+      /* ИЗМЕНЕНО: 50% */
       background-size: cover;
       background-position: center;
-      min-height: 500px; /* Фиксированная высота для картинки */
+      min-height: 500px;
+      /* Фиксированная высота для картинки */
     }
+
     .intro-about-block .content-cols .text-col {
-      flex: 0 0 50%; /* ИЗМЕНЕНО: 50% */
+      flex: 0 0 50%;
+      /* ИЗМЕНЕНО: 50% */
       padding: 48px;
       /* === ИЗМЕНЕНИЕ: Цвет фона === */
       background: #E9FCD7;
       border-left: 1px solid var(--border-color);
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* Распределяет h2 и p по вертикали */
+      justify-content: space-between;
+      /* Распределяет h2 и p по вертикали */
     }
+
     .intro-about-block .content-cols .text-col h2 {
-      font-size: 48px; 
+      font-size: 48px;
       font-weight: 500;
       margin-bottom: 24px;
     }
+
     .intro-about-block .content-cols .text-col p {
       max-width: 48ch;
       color: #111;
@@ -307,7 +411,7 @@
       font-weight: 500;
       line-height: 1.4;
     }
-    
+
 
 
     /* === ИЗМЕНЕНИЕ: Блок "Localized" возвращен к прежнему виду === */
@@ -317,32 +421,40 @@
       align-items: stretch;
       margin-top: 0;
       background: #fff;
-      border-top: 1px solid var(--border-color); 
-      height: 500px; /* === ИЗМЕНЕНИЕ 1 === */
+      border-top: 1px solid var(--border-color);
+      height: 500px;
+      /* === ИЗМЕНЕНИЕ 1 === */
     }
+
     .localized-block .col {
-      flex: 0 0 50%; /* ИЗМЕНЕНО: 50% */
+      flex: 0 0 50%;
+      /* ИЗМЕНЕНО: 50% */
       padding: 48px;
     }
+
     .localized-block .col.title-col {
       background: #E9FCD7;
       /* flex: 1; <-- ИЗМЕНЕНО: Удалено */
     }
+
     .localized-block .col.countries-col {
       /* flex: 1; <-- ИЗМЕНЕНО: Удалено */
-      border-left: 1px solid var(--border-color); /* Граница между колонками */
+      border-left: 1px solid var(--border-color);
+      /* Граница между колонками */
     }
+
     .localized-block .countries-list {
       list-style: none;
       padding: 0;
       margin: 0;
     }
+
     .localized-block .countries-list li {
       font-size: 24px;
       font-weight: 500;
       margin-bottom: 16px;
     }
-    
+
     /* === НОВЫЙ СТИЛЬ: для списка языков === */
     .localized-block .languages-note {
       margin-top: 24px;
@@ -351,73 +463,88 @@
       color: var(--text);
       line-height: 1.5;
     }
-    
-/* === НОВЫЙ БЛОК: КАРТА ВО ВСЮ ШИРИНУ === */
+
+    /* === НОВЫЙ БЛОК: КАРТА ВО ВСЮ ШИРИНУ === */
     .full-width-map-section {
       border-top: 1px solid var(--border-color);
       /* Убираем "зазор" под картинкой, 
          который браузеры добавляют по умолчанию */
-      line-height: 0; 
+      line-height: 0;
     }
+
     .full-width-map-section img {
-      width: 100%; /* Растягиваем на 100% ширины */
-      height: auto; /* Сохраняем пропорции */
-      display: block; /* Убирает "зазор" под картинкой */
+      width: 100%;
+      /* Растягиваем на 100% ширины */
+      height: auto;
+      /* Сохраняем пропорции */
+      display: block;
+      /* Убирает "зазор" под картинкой */
     }
+
     /* === КОНЕЦ БЛОКА === */
-    
+
 
     /* === НОВЫЙ БЛОК: Disclaimer === */
     .disclaimer-block {
       display: flex;
       gap: 0;
-      align-items: stretch; 
+      align-items: stretch;
       margin-top: 0;
       background: #fff;
-      border-top: 1px solid var(--border-color); 
-      height: 500px; /* === ИЗМЕНЕНИЕ 2 === */
+      border-top: 1px solid var(--border-color);
+      height: 500px;
+      /* === ИЗМЕНЕНИЕ 2 === */
     }
+
     .disclaimer-block .col {
-      flex: 0 0 50%; /* ИЗМЕНЕНО: 50% */
-      padding: 48px; /* Этот отступ остается для текстовой колонки */
+      flex: 0 0 50%;
+      /* ИЗМЕНЕНО: 50% */
+      padding: 48px;
+      /* Этот отступ остается для текстовой колонки */
     }
+
     .disclaimer-block .col.disclaimer-text-col {
       background: #E9FCD7;
       /* flex: 1; <-- ИЗМЕНЕНО: Удалено */
       display: flex;
       flex-direction: column;
-      justify-content: space-between; 
-      height: auto; 
-      border-left: 1px solid var(--border-color); 
+      justify-content: space-between;
+      height: auto;
+      border-left: 1px solid var(--border-color);
     }
+
     .disclaimer-block .col.disclaimer-text-col h2 {
-      font-size: 48px; 
+      font-size: 48px;
       font-weight: 500;
     }
+
     .disclaimer-block .col.disclaimer-text-col p {
       font-size: 14px;
       font-weight: 500;
       line-height: 1.4;
-      max-width: 50ch; 
+      max-width: 50ch;
     }
+
     .disclaimer-block .col.disclaimer-image-col {
       /* flex: 1; <-- ИЗМЕНЕНО: Удалено */
-      background: #fdfdfa; 
+      background: #fdfdfa;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100%; 
+      height: 100%;
       overflow: hidden;
-      padding: 0; 
+      padding: 0;
     }
+
     .disclaimer-block .col.disclaimer-image-col img {
       max-width: 100%;
       height: auto;
-      max-height: 100%; 
-      width: 100%; 
+      max-height: 100%;
+      width: 100%;
       height: 100%;
-      object-fit: cover; 
+      object-fit: cover;
     }
+
     /* === КОНЕЦ НОВОГО БЛОКА === */
 
 
@@ -428,45 +555,59 @@
       align-items: stretch;
       margin-top: 0;
       border-top: 1px solid var(--border-color);
-      margin-bottom: 0; /* Убираем отступ перед футером */
+      margin-bottom: 0;
+      /* Убираем отступ перед футером */
     }
+
     .contact-block .image-col {
-      flex: 0 0 50%; /* ИЗМЕНЕНО: 50% */
+      flex: 0 0 50%;
+      /* ИЗМЕНЕНО: 50% */
       background-size: cover;
       background-position: center;
       min-height: 500px;
-      border-left: 1px solid var(--border-color); 
+      border-left: 1px solid var(--border-color);
     }
+
     .contact-block .contact-text-col {
-      flex: 0 0 50%; /* ИЗМЕНЕНО: 50% */
+      flex: 0 0 50%;
+      /* ИЗМЕНЕНО: 50% */
       padding: 48px;
       background: #E9FCD7;
     }
+
     .contact-block h2 {
-      font-size: 48px; /* Стиль уже применен выше */
-      margin-bottom: 48px; /* Больше отступ после заголовка */
+      font-size: 48px;
+      /* Стиль уже применен выше */
+      margin-bottom: 48px;
+      /* Больше отступ после заголовка */
     }
+
     .contact-links {
       list-style: none;
       padding: 0;
       margin: 0;
     }
+
     .contact-links li {
       margin-bottom: 24px;
     }
+
     .contact-links .label {
       display: block;
       font-size: 12px;
       font-weight: 500;
       text-transform: uppercase;
-      color: #333; /* Темнее для лейбла */
+      color: #333;
+      /* Темнее для лейбла */
       letter-spacing: 0.5px;
       margin-bottom: 4px;
       display: flex;
       align-items: center;
       gap: 6px;
     }
-    .contact-links .label::before { /* Черная точка */
+
+    .contact-links .label::before {
+      /* Черная точка */
       content: '';
       display: inline-block;
       width: 8px;
@@ -474,36 +615,42 @@
       background: #000;
       border-radius: 50%;
     }
+
     .contact-links a {
       font-size: 18px;
       font-weight: 500;
       color: #000;
       text-decoration: none;
-      padding-left: 14px; /* Отступ, чтобы выровнять со точкой */
+      padding-left: 14px;
+      /* Отступ, чтобы выровнять со точкой */
     }
+
     .contact-links .social-links {
       display: flex;
       gap: 24px;
       padding-left: 14px;
     }
-     .contact-links .social-links a {
-       padding-left: 0;
-       font-size: 18px;
-       font-weight: 500;
-       color: #000;
-       text-decoration: none;
-       text-transform: uppercase;
-     }
+
+    .contact-links .social-links a {
+      padding-left: 0;
+      font-size: 18px;
+      font-weight: 500;
+      color: #000;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
 
     /* === КОНЕЦ НОВОГО БЛОКА === */
 
 
     /* НОВЫЙ ФУТЕР */
-    footer{
+    footer {
       background: #000;
       color: #fff;
-      margin-top: 0; /* Убираем margin-top */
-      border-top: 1px solid var(--border-color); /* Верхняя граница */
+      margin-top: 0;
+      /* Убираем margin-top */
+      border-top: 1px solid var(--border-color);
+      /* Верхняя граница */
     }
 
     .footer-top {
@@ -511,7 +658,8 @@
       justify-content: space-between;
       align-items: center;
       padding: 40px 0;
-      border-bottom: 1px solid var(--border-color); /* Разделитель между верхней и нижней частью */
+      border-bottom: 1px solid var(--border-color);
+      /* Разделитель между верхней и нижней частью */
     }
 
     .footer-logo-col {
@@ -521,7 +669,8 @@
     }
 
     .footer-logo-col img {
-      height: 60px; /* Размер иконки */
+      height: 60px;
+      /* Размер иконки */
       width: auto;
     }
 
@@ -539,97 +688,126 @@
       align-items: center;
       padding: 20px 0;
       font-size: 14px;
-      color: var(--muted); /* Цвет текста копирайта и all rights reserved */
+      color: var(--muted);
+      /* Цвет текста копирайта и all rights reserved */
     }
 
 
     /* Responsive */
-    @media (max-width:880px){
-      .two-cols, /* .about удален */
-      .localized-block, /* === ИЗМЕНЕНИЕ: localized-block === */
+    @media (max-width:880px) {
+      .two-cols,
+      /* .about удален */
+      .localized-block,
+      /* === ИЗМЕНЕНИЕ: localized-block === */
       .disclaimer-block,
       .contact-block,
-      .intro-about-block .content-cols /* === ИЗМЕНЕНИЕ: Добавлен intro-about-block === */
-      {
-        flex-direction:column;
+      .intro-about-block .content-cols
+
+      /* === ИЗМЕНЕНИЕ: Добавлен intro-about-block === */
+        {
+        flex-direction: column;
       }
-      
+
       /* === ИЗМЕНЕНИЕ: Responsive для localized-block === */
       .localized-block {
-        height: auto; /* === ИЗМЕНЕНИЕ 3 === */
+        height: auto;
+        /* === ИЗМЕНЕНИЕ 3 === */
       }
+
       .localized-block .col.countries-col {
         border-left: none;
-        border-top: 1px solid var(--border-color); /* Граница сверху на мобильных */
+        border-top: 1px solid var(--border-color);
+        /* Граница сверху на мобильных */
       }
-      
+
       /* === ИЗМЕНЕНИЕ: Responsive для disclaimer-block === */
       .disclaimer-block {
-        height: auto; /* === ИЗМЕНЕНИЕ 4 === */
+        height: auto;
+        /* === ИЗМЕНЕНИЕ 4 === */
       }
+
       .disclaimer-block .col.disclaimer-image-col {
         border-left: none;
-        padding: 0; 
+        padding: 0;
       }
+
       .disclaimer-block .col.disclaimer-text-col {
-        gap: 24px; /* Добавляем отступ между H2 и P на мобильных */
-        border-left: none; 
-        border-top: 1px solid var(--border-color); 
+        gap: 24px;
+        /* Добавляем отступ между H2 и P на мобильных */
+        border-left: none;
+        border-top: 1px solid var(--border-color);
       }
-      
+
       /* === ИЗМЕНЕНИЕ: Responsive для contact-block === */
       .contact-block .image-col {
-        min-height: 300px; /* Уменьшаем высоту картинки на мобильных */
-        border-left: none; 
-        border-top: 1px solid var(--border-color); 
+        min-height: 300px;
+        /* Уменьшаем высоту картинки на мобильных */
+        border-left: none;
+        border-top: 1px solid var(--border-color);
       }
+
       .contact-block .contact-text-col {
-         /* Стили границ были здесь, но теперь они на image-col для мобильных */
+        /* Стили границ были здесь, но теперь они на image-col для мобильных */
       }
-      
+
       /* === ИЗМЕНЕНИЕ: Responsive для intro-about-block === */
       .intro-about-block .content-cols .image-col {
         min-height: 300px;
       }
+
       .intro-about-block .content-cols .text-col {
         border-left: none;
         border-top: 1px solid var(--border-color);
       }
 
 
-      header .logo img{height:36px}
-      
+      header .logo img {
+        height: 36px
+      }
+
       /* === ИЗМЕНЕНИЕ: Responsive для шапки === */
       header .nav-and-button {
-         flex-direction: column;
-         align-items: flex-end; 
-         gap: 8px; 
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
       }
-      nav.site-nav{
-        margin-top:0; /* Сбрасываем старый отступ */
-        display: flex; /* === Добавлено для моб. === */
-        flex-direction: column; /* === Добавлено для моб. === */
-        align-items: flex-end; /* === Добавлено для моб. === */
-        gap: 8px; /* === Добавлено для моб. === */
+
+      nav.site-nav {
+        margin-top: 0;
+        /* Сбрасываем старый отступ */
+        display: flex;
+        /* === Добавлено для моб. === */
+        flex-direction: column;
+        /* === Добавлено для моб. === */
+        align-items: flex-end;
+        /* === Добавлено для моб. === */
+        gap: 8px;
+        /* === Добавлено для моб. === */
       }
-      
+
       nav.site-nav a {
-        margin-left: 0; /* === Добавлено для моб. === */
+        margin-left: 0;
+        /* === Добавлено для моб. === */
       }
-      
-      
-      .hero .title{font-size: 130px;} 
-      
-      .screenshots{overflow:auto; justify-content: flex-start;}
-      
+
+
+      .hero .title {
+        font-size: 130px;
+      }
+
+      .screenshots {
+        overflow: auto;
+        justify-content: flex-start;
+      }
+
       .shot-wrapper {
         flex: 0 0 300px;
       }
-      
-      .shot{
+
+      .shot {
         flex: 0 0 300px;
-        height:400px; 
-        padding: 0; 
+        height: 400px;
+        padding: 0;
       }
 
       /* Футер для мобильных */
@@ -638,37 +816,148 @@
         align-items: flex-start;
         gap: 20px;
       }
+
       .footer-bottom {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
       }
     }
+
+    /* === STYLES FOR STORE BUTTONS (FIXED) === */
+    .store-btns {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      background: #000;
+      /* Чистый черный */
+      color: #fff !important;
+      /* Важно: перебивает цвет ссылок в меню */
+      border-radius: 8px;
+      padding: 6px 12px;
+      text-decoration: none !important;
+      /* Убираем подчеркивание */
+      transition: transform 0.2s, opacity 0.2s;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      /* Легкая граница */
+      text-transform: none !important;
+      /* Важно: отменяем капс из меню */
+    }
+
+    .store-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.85;
+    }
+
+    .store-btn svg {
+      width: 22px;
+      /* Чуть аккуратнее размер */
+      height: 22px;
+      margin-right: 10px;
+      fill: #fff;
+      flex-shrink: 0;
+    }
+
+    .store-btn-content {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      /* Плотный интерлиньяж */
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .store-btn-content small {
+      font-size: 9px;
+      text-transform: uppercase;
+      /* "Download on the" капсом */
+      opacity: 0.9;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    .store-btn-content span {
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      /* Системный шрифт для кнопок */
+    }
+
+    /* Адаптация для шапки */
+    header .store-btns {
+      margin-top: 0;
+    }
+
+    /* Мобильная адаптация */
+    @media (max-width: 880px) {
+      header .nav-and-button {
+        align-items: center;
+      }
+
+      header .store-btns {
+        justify-content: center;
+      }
+
+      .store-btns {
+        justify-content: flex-start;
+      }
+    }
   </style>
 </head>
+
 <body>
-  
+
   <div class="site-header-wrapper">
     <div class="wrap">
       <header class="site-header">
         <div class="logo">
-          <a href="/"><img src="/screenshots/logo.svg" alt="EcoSort logo"></a>
+          <a href="/"><img src="/screenshots/logo.svg"
+              alt="EcoSort logo"></a>
         </div>
-        
+
         <div class="nav-and-button">
+          <div class="store-btns header-download-btn" style="display:inline-flex; vertical-align:middle; gap:8px;">
+            <a href="https://apps.apple.com/app/ecosort-app/id6747254846" class="store-btn" target="_blank">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M363.3 154.2c-15.6-26.6-43.2-43.7-74.8-44.5-31.5-.7-65.7 18.5-83 18.5-17.2 0-45.3-17.7-74.6-17-38.6.6-74.5 22.5-94.4 57-41 71.3-10.4 176.4 29.3 234 19.3 28 42.4 59.4 72.5 58.3 29.3-1.2 40.5-18.7 76-18.7 35.6 0 45.4 18.7 76.5 18 31.4-.6 51.5-28.7 70.4-57.5 22.3-32.3 31.4-63.5 31.8-65.2-.7-.3-61.2-23.5-61.8-93.5-.5-58.5 47.7-86.4 50-87.8-27.4-40.2-69.8-44.7-84.5-45.3zM280.4 39.8c16.6-20 27.8-48 24.8-76.3-24 1-53 16-70.3 36-15.4 17.7-28.9 46.2-25.3 73.5 26.8 2 54.2-13.4 70.8-33.2z" />
+              </svg>
+              <div class="store-btn-content">
+                <small>Download on the</small>
+                <span>App Store</span>
+              </div>
+            </a>
+
+            <a href="https://play.google.com/store/apps/details?id=com.EcoSort" class="store-btn" target="_blank">
+              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M99.6 15.3C80.8 4.7 64 22 64 45v422c0 23.3 17 39.5 35.6 29.7l344.4-197.8c16.3-9.4 16.3-34.5 0-43.9L99.6 15.3z" />
+              </svg>
+              <div class="store-btn-content">
+                <small>Get it on</small>
+                <span>Google Play</span>
+              </div>
+            </a>
+          </div>
           <nav class="site-nav">
-            <a href="#" class="btn header-download-btn">DOWNLOAD</a>
             <a href="/#about">About</a>
             <a href="/#screenshots">How to use</a>
             <a href="/#features">Locations</a>
             <a href="/#contact">Contact</a>
           </nav>
         </div>
-        
+
       </header>
     </div>
   </div>
-  
+
   <main role="main">
     <section class="hero">
     <div class="wrap">
@@ -687,7 +976,27 @@
   <div class="col callout">
     <h2>HELP KEEP<br/>THE PLANET CLEAN</h2>
     <p>Quickly scan packaging and get immediate, localised sorting instructions and eco-friendly tips.</p>
-    <a class="btn" href="#">⬇ DOWNLOAD</a>
+    <div class="store-btns header-download-btn" style="display:inline-flex; vertical-align:middle; gap:8px;">
+              <a href="https://apps.apple.com/app/ecosort-app/id6747254846" class="store-btn" target="_blank">
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M363.3 154.2c-15.6-26.6-43.2-43.7-74.8-44.5-31.5-.7-65.7 18.5-83 18.5-17.2 0-45.3-17.7-74.6-17-38.6.6-74.5 22.5-94.4 57-41 71.3-10.4 176.4 29.3 234 19.3 28 42.4 59.4 72.5 58.3 29.3-1.2 40.5-18.7 76-18.7 35.6 0 45.4 18.7 76.5 18 31.4-.6 51.5-28.7 70.4-57.5 22.3-32.3 31.4-63.5 31.8-65.2-.7-.3-61.2-23.5-61.8-93.5-.5-58.5 47.7-86.4 50-87.8-27.4-40.2-69.8-44.7-84.5-45.3zM280.4 39.8c16.6-20 27.8-48 24.8-76.3-24 1-53 16-70.3 36-15.4 17.7-28.9 46.2-25.3 73.5 26.8 2 54.2-13.4 70.8-33.2z"/>
+                </svg>
+                <div class="store-btn-content">
+                  <small>Download on the</small>
+                  <span>App Store</span>
+                </div>
+              </a>
+              
+              <a href="https://play.google.com/store/apps/details?id=com.EcoSort" class="store-btn" target="_blank">
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M99.6 15.3C80.8 4.7 64 22 64 45v422c0 23.3 17 39.5 35.6 29.7l344.4-197.8c16.3-9.4 16.3-34.5 0-43.9L99.6 15.3z"/>
+                </svg>
+                <div class="store-btn-content">
+                  <small>Get it on</small>
+                  <span>Google Play</span>
+                </div>
+              </a>
+            </div>
     
     <p class="callout-detail">
       
@@ -740,7 +1049,7 @@
     <div class="image-col" style="background-image:url('/screenshots/port2.JPG');"></div>
     <div class="text-col">
       <h2>SORT SMARTER<br/>LIVE GREENER</h2>
-      <p>EcoSort isn’t just another recycling app. We want to make it effortless for everyone to dispose of waste correctly - no more confusion about bins, colors or local rules. <br/><br/>With EcoSort you will spend less time worrying about “Where does this go?” and more time feeling good about helping the planet. We will provide the information and tools - you do the sorting. <br/><br/>If you have feedback, feature requests or questions, reach out anytime at <a href="mailto:akor@ecosort.app">akor@ecosort.app</a>.</p>
+      <p>EcoSort isn’t just another recycling app. We want to make it effortless for everyone to dispose of waste correctly - no more confusion about bins, colors or local rules. <br/><br/>With EcoSort you will spend less time worrying about “Where does this go?” and more time feeling good about helping the planet. We will provide the information and tools - you do the sorting. <br/><br/>If you have feedback, feature requests or questions, reach out anytime at <a href="mailto:hello@ecosort.app">hello@ecosort.app</a>.</p>
     </div>
   </div>
 </section>
@@ -801,7 +1110,7 @@
     <ul class="contact-links">
       <li>
         <span class="label">Email</span>
-        <a href="mailto:info@ecosort.app">INFO@ECOSORT.APP</a>
+        <a href="mailto:hello@ecosort.app">HELLO@ECOSORT.APP</a>
       </li>
       <li></li>
       <li>
@@ -819,10 +1128,12 @@
     <div class="wrap">
       <div class="footer-top">
         <div class="footer-logo-col">
-          <img src="/screenshots/logo-white.svg" alt="EcoSort logo"> 
+          <img src="/screenshots/logo-white.svg" alt="EcoSort logo">
         </div>
         <nav class="footer-nav">
           <a href="/privacy.html">Privacy Policy</a>
+          <span style="margin: 0 10px; color: rgba(255,255,255,0.3);">|</span>
+          <a href="/terms.html">Terms of Use</a>
         </nav>
       </div>
       <div class="footer-bottom">
@@ -832,4 +1143,5 @@
     </div>
   </footer>
 </body>
+
 </html>

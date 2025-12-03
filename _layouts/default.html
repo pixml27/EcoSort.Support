@@ -79,16 +79,29 @@
 
 
     nav.site-nav a {
-      margin-left: 18px;
+      margin-left: 10px;
       text-decoration: none;
-      color: var(--text);
-      font-weight: 400;
-      /* Regular */
+      color: #000;
+      font-weight: 500;
+      /* Medium weight like buttons */
       font-size: 14px;
-      text-transform: uppercase;
-      /* ЗАГЛАВНЫЕ БУКВЫ */
+      text-transform: none;
+      /* Remove uppercase to match button style request if needed, but keeping it consistent with design choice. User said "black text", didn't explicitly say remove caps, but "like buttons" usually implies similar casing. Let's keep it clean. */
       vertical-align: middle;
-      /* Добавлено для выравнивания */
+
+      /* Button styling */
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 12px;
+      /* Matching .btn radius */
+      background: transparent;
+      transition: all 0.2s ease;
+    }
+
+    nav.site-nav a:hover {
+      background: #f0f0f0;
+      /* Light grey on hover */
+      opacity: 0.8;
     }
 
     /* === НОВЫЕ СТИЛИ: для обертки навигации и кнопки === */
@@ -933,10 +946,11 @@
               </div>
             </a>
           </div>
-          <a href="{{ '/' | relative_url }}#about">About</a>
-          <a href="{{ '/' | relative_url }}#screenshots">How to use</a>
-          <a href="{{ '/' | relative_url }}#features">Locations</a>
-          <a href="{{ '/' | relative_url }}#contact">Contact</a>
+          <nav class="site-nav">
+            <a href="{{ '/' | relative_url }}#about">About</a>
+            <a href="{{ '/' | relative_url }}#screenshots">How to use</a>
+            <a href="{{ '/' | relative_url }}#features">Locations</a>
+            <a href="{{ '/' | relative_url }}#contact">Contact</a>
           </nav>
         </div>
 
@@ -956,6 +970,8 @@
         </div>
         <nav class="footer-nav">
           <a href="{% link privacy.md %}">Privacy Policy</a>
+          <span style="margin: 0 10px; color: rgba(255,255,255,0.3);">|</span>
+          <a href="{% link terms.md %}">Terms of Use</a>
         </nav>
       </div>
       <div class="footer-bottom">

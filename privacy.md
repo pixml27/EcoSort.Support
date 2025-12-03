@@ -1,6 +1,6 @@
 ---
 layout: page
-title: EcoSort.app
+title: Privacy Policy
 description: AI-powered recycling assistant
 ---
 
