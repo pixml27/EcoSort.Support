@@ -9,21 +9,21 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --accent: #D5F05F;
-      /* background for title and some blocks */
       --accent-dark: #c6e64a;
-      --text: #111;
-      --muted: #666;
+      
+      /* === ИЗМЕНЕНО: Теперь весь текст одного цвета === */
+      --text: #2f372f; 
+      --muted: #2A2B2A; /* Даже серый текст теперь станет темным */
+      
       --container: 1180px;
       --g: 24px;
 
       font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
-      --border-color: #e4e4e4;
-      /* CSS-переменная для цвета границы */
+      --border-color: #b2c489;
     }
 
     * {
@@ -81,7 +81,7 @@
     nav.site-nav a {
       margin-left: 10px;
       text-decoration: none;
-      color: #000;
+      color: #2f372f;
       font-weight: 500;
       /* Medium weight like buttons */
       font-size: 14px;
@@ -124,23 +124,41 @@
     .hero {
       background: var(--accent);
       padding: 28px 0;
+      /* === ИЗМЕНЕНО: Включаем Flexbox для вертикального и горизонтального центрирования === */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
     }
 
     .hero .wrap {
-      text-align: center;
+      /* === ИЗМЕНЕНО: Разрешаем обертке растягиваться на всю ширину === */
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+      display: flex;
+      justify-content: center;
     }
 
-
-    .hero .title {
-      font-weight: 500;
-      /* Medium */
+   .hero .title {
+      /* === ИЗМЕНЕНО: Подключаем Londrina Shadow === */
+      font-family: 'Londrina Shadow', cursive;
+      
+      font-weight: 400;
       margin: 0;
       padding: 28px 0;
-      color: #2A2B2A;
-      /* 3. Цвет текста EcoSort */
-      font-size: clamp(106px, 22vw, 400px);
-      letter-spacing: 0.02em;
-      line-height: 0.9
+      color: #454645;
+      
+      /* Этот шрифт узкий, поэтому делаем его чуть крупнее на старте */
+      font-size: clamp(60px, 25vw, 400px);
+      
+      /* Для шрифтов с тенью полезно добавить немного расстояния */
+      letter-spacing: 0.02em; 
+      line-height: 1.0; 
+      
+      text-align: center;
+      width: 100%;
+      display: block;
     }
 
 
@@ -390,7 +408,7 @@
       /* ИЗМЕНЕНО: 50% */
       padding: 48px;
       /* === ИЗМЕНЕНИЕ: Цвет фона === */
-      background: #E9FCD7;
+      background: #D5F05F;
       border-left: 1px solid var(--border-color);
       display: flex;
       flex-direction: column;
@@ -433,7 +451,7 @@
     }
 
     .localized-block .col.title-col {
-      background: #E9FCD7;
+      background: #D5F05F;
       /* flex: 1; <-- ИЗМЕНЕНО: Удалено */
     }
 
@@ -504,7 +522,7 @@
     }
 
     .disclaimer-block .col.disclaimer-text-col {
-      background: #E9FCD7;
+      background: #D5F05F;
       /* flex: 1; <-- ИЗМЕНЕНО: Удалено */
       display: flex;
       flex-direction: column;
@@ -572,7 +590,7 @@
       flex: 0 0 50%;
       /* ИЗМЕНЕНО: 50% */
       padding: 48px;
-      background: #E9FCD7;
+      background: #D5F05F;
     }
 
     .contact-block h2 {
@@ -645,7 +663,7 @@
 
     /* НОВЫЙ ФУТЕР */
     footer {
-      background: #000;
+      background: #2f372f;
       color: #fff;
       margin-top: 0;
       /* Убираем margin-top */
@@ -693,133 +711,179 @@
     }
 
 
-    /* Responsive */
-    @media (max-width:880px) {
+   /* Responsive Fixes */
+    @media (max-width: 880px) {
+/* Открепляем шапку на мобильных */
+      .site-header-wrapper {
+        position: relative; /* Или static. Главное - не sticky */
+        top: auto;
+        border-bottom: none; /* Опционально: можно убрать границу, если хочется */
+      }
+      /* 1. Сбрасываем направление флексов на колонку */
       .two-cols,
-      /* .about удален */
       .localized-block,
-      /* === ИЗМЕНЕНИЕ: localized-block === */
       .disclaimer-block,
       .contact-block,
-      .intro-about-block .content-cols
-
-      /* === ИЗМЕНЕНИЕ: Добавлен intro-about-block === */
-        {
+      .intro-about-block .content-cols {
         flex-direction: column;
       }
 
-      /* === ИЗМЕНЕНИЕ: Responsive для localized-block === */
-      .localized-block {
-        height: auto;
-        /* === ИЗМЕНЕНИЕ 3 === */
+      /* 2. Сбрасываем жесткую ширину 50%, чтобы блоки занимали 100% ширины */
+      .two-cols .col,
+      .intro-about-block .content-cols .image-col,
+      .intro-about-block .content-cols .text-col,
+      .localized-block .col,
+      .disclaimer-block .col,
+      .contact-block .image-col,
+      .contact-block .contact-text-col {
+        flex: 1 1 auto;
+        width: 100%;
+        min-width: 100%;
       }
 
+      /* 3. Уменьшаем отступы внутри блоков для мобильных */
+      .two-cols .col,
+      .callout,
+      .intro-about-block .content-cols .text-col,
+      .localized-block .col,
+      .disclaimer-block .col,
+      .contact-block .contact-text-col {
+        padding: 30px 20px;
+      }
+
+      /* 4. Настройка границ и высот для мобильного порядка */
+      
+      /* Localized Block */
+      .localized-block {
+        height: auto;
+      }
       .localized-block .col.countries-col {
         border-left: none;
         border-top: 1px solid var(--border-color);
-        /* Граница сверху на мобильных */
       }
 
-      /* === ИЗМЕНЕНИЕ: Responsive для disclaimer-block === */
+      /* Disclaimer Block */
       .disclaimer-block {
         height: auto;
-        /* === ИЗМЕНЕНИЕ 4 === */
       }
-
       .disclaimer-block .col.disclaimer-image-col {
         border-left: none;
         padding: 0;
+        min-height: 250px;
       }
-
       .disclaimer-block .col.disclaimer-text-col {
-        gap: 24px;
-        /* Добавляем отступ между H2 и P на мобильных */
         border-left: none;
         border-top: 1px solid var(--border-color);
+        gap: 20px;
       }
-
-      /* === ИЗМЕНЕНИЕ: Responsive для contact-block === */
+      
+      /* Contact Block */
       .contact-block .image-col {
-        min-height: 300px;
-        /* Уменьшаем высоту картинки на мобильных */
+        min-height: 250px;
         border-left: none;
         border-top: 1px solid var(--border-color);
+        order: 2; /* Картинка под текстом */
       }
 
-      .contact-block .contact-text-col {
-        /* Стили границ были здесь, но теперь они на image-col для мобильных */
-      }
-
-      /* === ИЗМЕНЕНИЕ: Responsive для intro-about-block === */
+      /* Intro About Block */
       .intro-about-block .content-cols .image-col {
-        min-height: 300px;
+        min-height: 250px;
       }
-
       .intro-about-block .content-cols .text-col {
         border-left: none;
         border-top: 1px solid var(--border-color);
       }
 
-
+      /* 5. Исправление Шапки (Header) */
       header .logo img {
-        height: 36px
+        height: 36px;
       }
 
-      /* === ИЗМЕНЕНИЕ: Responsive для шапки === */
+      header.site-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
       header .nav-and-button {
         flex-direction: column;
-        align-items: flex-end;
-        gap: 8px;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
       }
 
       nav.site-nav {
         margin-top: 0;
-        /* Сбрасываем старый отступ */
         display: flex;
-        /* === Добавлено для моб. === */
         flex-direction: column;
-        /* === Добавлено для моб. === */
-        align-items: flex-end;
-        /* === Добавлено для моб. === */
-        gap: 8px;
-        /* === Добавлено для моб. === */
+        align-items: center;
+        gap: 12px;
+        width: 100%;
       }
 
       nav.site-nav a {
         margin-left: 0;
-        /* === Добавлено для моб. === */
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        background: #f9f9f9;
+        border-radius: 8px;
+      }
+      
+      /* Центрируем кнопки сторов */
+      header .store-btns {
+         justify-content: center;
+      }
+      .store-btns {
+        justify-content: center;
       }
 
-
+      /* 6. Исправление Главного заголовка (Hero) */
       .hero .title {
-        font-size: 130px;
+        /* Делаем шрифт адаптивным, чтобы не рвал экран */
+        font-size: clamp(48px, 15vw, 80px);
+        padding: 10px 0;
       }
 
+      /* 7. Скриншоты - горизонтальный скролл */
       .screenshots {
-        overflow: auto;
+        overflow-x: auto;
         justify-content: flex-start;
+        padding-left: 20px;
+        padding-right: 20px;
+        -webkit-overflow-scrolling: touch;
       }
 
       .shot-wrapper {
-        flex: 0 0 300px;
+        flex: 0 0 260px; /* Уменьшаем ширину карточки */
+        margin-right: 15px;
       }
 
       .shot {
-        flex: 0 0 300px;
-        height: 400px;
+        flex: 0 0 260px;
+        height: auto;
+        aspect-ratio: 350/550; /* Сохраняем пропорции */
         padding: 0;
       }
+      
+      .shot img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
 
-      /* Футер для мобильных */
+      /* 8. Футер */
       .footer-top {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
         gap: 20px;
       }
 
       .footer-bottom {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 10px;
       }
     }
@@ -1048,7 +1112,7 @@
   <div class="content-cols">
     <div class="image-col" style="background-image:url('/screenshots/port2.JPG');"></div>
     <div class="text-col">
-      <h2>SORT SMARTER<br/>LIVE GREENER</h2>
+      <h2>RECYCLE RIGHT,<br/>WHETHER YOU ARE</h2>
       <p>EcoSort isn’t just another recycling app. We want to make it effortless for everyone to dispose of waste correctly - no more confusion about bins, colors or local rules. <br/><br/>With EcoSort you will spend less time worrying about “Where does this go?” and more time feeling good about helping the planet. We will provide the information and tools - you do the sorting. <br/><br/>If you have feedback, feature requests or questions, reach out anytime at <a href="mailto:hello@ecosort.app">hello@ecosort.app</a>.</p>
     </div>
   </div>
