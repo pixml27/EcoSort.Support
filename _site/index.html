@@ -702,6 +702,33 @@
       text-transform: uppercase;
     }
 
+    .footer-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .footer-badge-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 250px;
+      height: 54px;
+      line-height: 0;
+    }
+
+    .footer-badge-link img {
+      display: block;
+      width: 250px;
+      height: 54px;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
     .footer-bottom {
       display: flex;
       justify-content: space-between;
@@ -893,6 +920,10 @@
         align-items: center;
         text-align: center;
         gap: 20px;
+      }
+
+      .footer-badges {
+        gap: 12px;
       }
 
       .footer-bottom {
@@ -1223,6 +1254,19 @@
           <span style="margin: 0 10px; color: rgba(255,255,255,0.3);">|</span>
           <a href="/terms.html">Terms of Use</a>
         </nav>
+      </div>
+      <div class="footer-badges" aria-label="EcoSort listings">
+        <a class="footer-badge-link product-hunt"
+          href="https://www.producthunt.com/products/ecosort-2?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-ecosort-2"
+          target="_blank" rel="noopener noreferrer">
+          <img alt="EcoSort - Recycling companion - no more confusion about bins and rules | Product Hunt"
+            width="250" height="54"
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1048309&amp;theme=light&amp;t=1779102285865">
+        </a>
+        <a class="footer-badge-link sell-with-boost" href="https://sellwithboost.com" target="_blank"
+          rel="noopener noreferrer">
+          <img src="https://sellwithboost.com/badge/listing.svg" alt="Listed on Sell With boost">
+        </a>
       </div>
       <div class="footer-bottom">
         <span>© 2025</span>
